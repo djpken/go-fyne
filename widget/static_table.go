@@ -897,11 +897,13 @@ func (r *staticTableCellsRenderer) scroll() {
 }
 func (r *staticTableCellsRenderer) refreshForID(toDraw TableCellID) {
 
+	r.cells.propertyLock.Lock()
 	updateCell := r.cells.t.UpdateCell
 	if updateCell == nil {
 		fyne.LogError("Missing UpdateCell callback required for StaticTable", nil)
 	}
 	cell := r.visible[toDraw]
+	r.cells.propertyLock.Unlock()
 	updateCell(toDraw, cell)
 }
 
