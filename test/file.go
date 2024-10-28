@@ -7,8 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/storage"
 )
 
 var errUnsupportedURLProtocol = errors.New("unsupported URL protocol")

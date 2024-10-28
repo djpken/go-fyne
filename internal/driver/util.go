@@ -3,8 +3,8 @@ package driver
 import (
 	"math"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/cache"
 )
 
 // AbsolutePositionForObject returns the absolute position of an object in a set of object trees.

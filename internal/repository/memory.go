@@ -5,9 +5,9 @@ import (
 	"io"
 	"strings"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/storage"
-	"djpken/go-fyne/storage/repository"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/storage/repository"
 )
 
 // declare conformance to interfaces

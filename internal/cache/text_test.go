@@ -3,7 +3,7 @@ package cache
 import (
 	"testing"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 	"github.com/stretchr/testify/assert"
 )
 

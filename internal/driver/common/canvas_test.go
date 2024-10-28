@@ -8,11 +8,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
 )
 
 func TestCanvas_walkTree(t *testing.T) {

@@ -1,7 +1,7 @@
 // Package desktop provides desktop specific driver functionality.
 package desktop
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 // Driver represents the extended capabilities of a desktop driver
 type Driver interface {

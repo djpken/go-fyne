@@ -4,9 +4,9 @@ import (
 	"image/color"
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/async"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/async"
 )
 
 func TestQueue(t *testing.T) {

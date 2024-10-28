@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/canvas"
 )
 
 func TestNewBorder_Nil(t *testing.T) {

@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 func Test_NewTheme(t *testing.T) {

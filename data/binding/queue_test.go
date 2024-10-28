@@ -6,7 +6,7 @@ import (
 	"sync"
 	"testing"
 
-	"djpken/go-fyne/internal/async"
+	"github.com/djpken/go-fyne/internal/async"
 	"github.com/stretchr/testify/assert"
 )
 

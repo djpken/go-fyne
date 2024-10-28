@@ -9,9 +9,9 @@ import (
 	"strings"
 	"text/template"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/cmd/fyne/internal/mobile"
-	"djpken/go-fyne/cmd/fyne/internal/templates"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/cmd/fyne/internal/mobile"
+	"github.com/djpken/go-fyne/cmd/fyne/internal/templates"
 
 	"github.com/urfave/cli/v2"
 	"golang.org/x/sys/execabs"

@@ -3,7 +3,7 @@ package widget
 import (
 	"testing"
 
-	"djpken/go-fyne/data/binding"
+	"github.com/djpken/go-fyne/data/binding"
 	"github.com/stretchr/testify/assert"
 )
 

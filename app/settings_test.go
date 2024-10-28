@@ -5,12 +5,12 @@ import (
 	"path/filepath"
 	"testing"
 
-	"djpken/go-fyne"
-	internalapp "djpken/go-fyne/internal/app"
-	"djpken/go-fyne/internal/build"
-	internalTest "djpken/go-fyne/internal/test"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	internalapp "github.com/djpken/go-fyne/internal/app"
+	"github.com/djpken/go-fyne/internal/build"
+	internalTest "github.com/djpken/go-fyne/internal/test"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
 
 	"github.com/stretchr/testify/assert"
 )

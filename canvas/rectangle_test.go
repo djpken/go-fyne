@@ -4,10 +4,10 @@ import (
 	"image/color"
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/driver/software"
-	"djpken/go-fyne/test"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/driver/software"
+	"github.com/djpken/go-fyne/test"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -5,10 +5,10 @@ package widget
 import (
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/cache"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
 
 	"github.com/stretchr/testify/assert"
 )

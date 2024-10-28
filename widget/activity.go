@@ -5,9 +5,9 @@ import (
 	"sync/atomic"
 	"time"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/theme"
 )
 
 var _ fyne.Widget = (*Activity)(nil)

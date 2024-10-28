@@ -4,9 +4,9 @@ import (
 	"image/color"
 	"math"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	paint "djpken/go-fyne/internal/painter"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	paint "github.com/djpken/go-fyne/internal/painter"
 )
 
 func (p *painter) createBuffer(points []float32) Buffer {

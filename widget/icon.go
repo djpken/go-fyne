@@ -1,10 +1,10 @@
 package widget
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/widget"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne/theme"
 )
 
 type iconRenderer struct {

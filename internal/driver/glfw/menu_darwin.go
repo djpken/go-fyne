@@ -10,11 +10,11 @@ import (
 	"strings"
 	"unsafe"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/painter"
-	"djpken/go-fyne/internal/svg"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/painter"
+	"github.com/djpken/go-fyne/internal/svg"
+	"github.com/djpken/go-fyne/theme"
 )
 
 /*

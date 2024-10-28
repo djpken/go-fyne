@@ -6,7 +6,7 @@ import (
 	"os"
 	"runtime/debug"
 
-	"djpken/go-fyne/cmd/fyne/internal/commands"
+	"github.com/djpken/go-fyne/cmd/fyne/internal/commands"
 	"github.com/urfave/cli/v2"
 )
 

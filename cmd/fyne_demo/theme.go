@@ -3,7 +3,7 @@ package main
 import (
 	"image/color"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 type forcedVariant struct {

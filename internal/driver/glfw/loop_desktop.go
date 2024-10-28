@@ -3,7 +3,7 @@
 package glfw
 
 import (
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 
 	"github.com/go-gl/glfw/v3.3/glfw"
 )

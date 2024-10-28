@@ -3,11 +3,11 @@ package widget_test
 import (
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/layout"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/layout"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 )
 
 func TestIcon_Layout(t *testing.T) {

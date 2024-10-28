@@ -13,10 +13,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/painter"
-	"djpken/go-fyne/internal/test"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/painter"
+	"github.com/djpken/go-fyne/internal/test"
+	"github.com/djpken/go-fyne/theme"
 )
 
 func TestAssertImageMatches(t *testing.T) {

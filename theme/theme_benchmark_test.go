@@ -3,7 +3,7 @@ package theme
 import (
 	"testing"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 func BenchmarkTheme_current(b *testing.B) {

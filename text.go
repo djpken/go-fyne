@@ -62,7 +62,7 @@ type TextStyle struct {
 	// Since: 2.1
 	TabWidth int // Width of tabs in spaces
 	// Since: 2.5
-	// Currently only supported by [djpken/go-fyne/widget.TextGrid].
+	// Currently only supported by [github.com/djpken/go-fyne/widget.TextGrid].
 	Underline bool // Should text be underlined.
 }
 

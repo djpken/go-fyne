@@ -8,8 +8,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/storage"
 )
 
 func getFavoriteLocation(homeURI fyne.URI, name, fallbackName string) (fyne.URI, error) {

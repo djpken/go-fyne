@@ -6,10 +6,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/storage"
-	"djpken/go-fyne/test"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/test"
 )
 
 func TestRichText_Image(t *testing.T) {

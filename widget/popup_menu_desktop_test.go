@@ -8,8 +8,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/test"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/test"
 )
 
 func TestPopUpMenu_KeyboardControl(t *testing.T) {

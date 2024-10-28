@@ -17,7 +17,7 @@
 // means it has lost the focus.
 //
 // See the golang.org/x/mobile/app package for details on the event model.
-package lifecycle // import "djpken/go-fyne/internal/driver/mobile/event/lifecycle"
+package lifecycle // import "github.com/djpken/go-fyne/internal/driver/mobile/event/lifecycle"
 
 import (
 	"fmt"

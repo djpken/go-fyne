@@ -4,10 +4,10 @@ import (
 	"errors"
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal"
-	"djpken/go-fyne/storage"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal"
+	"github.com/djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/theme"
 
 	"github.com/stretchr/testify/assert"
 )

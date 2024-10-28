@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"math"
 
-	"djpken/go-fyne/internal/driver/mobile/gl"
+	"github.com/djpken/go-fyne/internal/driver/mobile/gl"
 )
 
 const (

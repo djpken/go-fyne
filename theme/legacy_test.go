@@ -6,7 +6,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 var oldTheme = &legacyTheme{}

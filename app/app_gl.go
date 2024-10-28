@@ -3,8 +3,8 @@
 package app
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/driver/glfw"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/driver/glfw"
 )
 
 // NewWithID returns a new app instance using the appropriate runtime driver.

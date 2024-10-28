@@ -4,11 +4,11 @@ import (
 	"errors"
 	"reflect"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/cache"
-	"djpken/go-fyne/layout"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/layout"
+	"github.com/djpken/go-fyne/theme"
 )
 
 // errFormItemInitialState defines the error if the initial validation for a FormItem result

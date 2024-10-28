@@ -1,7 +1,7 @@
 package app
 
 import (
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 var meta = fyne.AppMetadata{

@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"strings"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/cmd/fyne/internal/templates"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/cmd/fyne/internal/templates"
 	"github.com/fyne-io/image/ico"
 	"github.com/josephspurrier/goversioninfo"
 	"golang.org/x/sys/execabs"

@@ -1,9 +1,9 @@
 package mobile
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/driver/mobile"
-	"djpken/go-fyne/internal/driver/mobile/app"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/driver/mobile"
+	"github.com/djpken/go-fyne/internal/driver/mobile/app"
 )
 
 func hideVirtualKeyboard() {

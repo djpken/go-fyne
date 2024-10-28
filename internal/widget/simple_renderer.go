@@ -1,6 +1,6 @@
 package widget
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 var _ fyne.WidgetRenderer = (*SimpleRenderer)(nil)
 

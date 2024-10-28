@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
 )
 
 func TestForceVariantTheme_Color(t *testing.T) {

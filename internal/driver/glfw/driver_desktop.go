@@ -12,14 +12,14 @@ import (
 	"syscall"
 	"time"
 
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/painter"
-	"djpken/go-fyne/internal/svg"
-	"djpken/go-fyne/lang"
 	"fyne.io/systray"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/painter"
+	"github.com/djpken/go-fyne/internal/svg"
+	"github.com/djpken/go-fyne/lang"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/theme"
 )
 
 const desktopDefaultDoubleTapDelay = 300 * time.Millisecond

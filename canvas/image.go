@@ -11,11 +11,11 @@ import (
 	"path/filepath"
 	"sync"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/cache"
-	"djpken/go-fyne/internal/scale"
-	"djpken/go-fyne/internal/svg"
-	"djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/internal/scale"
+	"github.com/djpken/go-fyne/internal/svg"
+	"github.com/djpken/go-fyne/storage"
 )
 
 // ImageFill defines the different type of ways an image can stretch to fill its space.

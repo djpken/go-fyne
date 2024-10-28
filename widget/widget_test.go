@@ -7,11 +7,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	internalWidget "djpken/go-fyne/internal/widget"
-	"djpken/go-fyne/layout"
-	"djpken/go-fyne/test"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	internalWidget "github.com/djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne/layout"
+	"github.com/djpken/go-fyne/test"
 )
 
 type myWidget struct {

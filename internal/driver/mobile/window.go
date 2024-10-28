@@ -1,13 +1,13 @@
 package mobile
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/internal/cache"
-	"djpken/go-fyne/internal/driver/common"
-	"djpken/go-fyne/layout"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/internal/driver/common"
+	"github.com/djpken/go-fyne/layout"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 )
 
 type window struct {

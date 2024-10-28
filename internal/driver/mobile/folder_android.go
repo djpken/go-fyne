@@ -18,9 +18,9 @@ import (
 	"strings"
 	"unsafe"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/driver/mobile/app"
-	"djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/driver/mobile/app"
+	"github.com/djpken/go-fyne/storage"
 )
 
 func canListURI(uri fyne.URI) bool {

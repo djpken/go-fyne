@@ -4,13 +4,13 @@ import (
 	"math"
 	"strconv"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/driver/desktop"
-	"djpken/go-fyne/driver/mobile"
-	"djpken/go-fyne/internal/cache"
-	"djpken/go-fyne/internal/widget"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/driver/desktop"
+	"github.com/djpken/go-fyne/driver/mobile"
+	"github.com/djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne/theme"
 )
 
 const noCellMatch = math.MaxInt

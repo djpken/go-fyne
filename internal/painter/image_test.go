@@ -3,11 +3,11 @@ package painter_test
 import (
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/painter"
-	"djpken/go-fyne/internal/painter/software"
-	"djpken/go-fyne/test"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/painter"
+	"github.com/djpken/go-fyne/internal/painter/software"
+	"github.com/djpken/go-fyne/test"
 	"github.com/stretchr/testify/assert"
 )
 

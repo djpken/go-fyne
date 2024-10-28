@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/cmd/fyne/internal/mobile"
-	"djpken/go-fyne/cmd/fyne/internal/templates"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/cmd/fyne/internal/mobile"
+	"github.com/djpken/go-fyne/cmd/fyne/internal/templates"
 
 	"golang.org/x/sys/execabs"
 )

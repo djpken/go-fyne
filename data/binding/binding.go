@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"sync"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 var (

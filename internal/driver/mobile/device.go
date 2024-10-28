@@ -1,10 +1,10 @@
 package mobile
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/driver/mobile"
-	"djpken/go-fyne/internal/driver/mobile/event/size"
-	"djpken/go-fyne/lang"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/driver/mobile"
+	"github.com/djpken/go-fyne/internal/driver/mobile/event/size"
+	"github.com/djpken/go-fyne/lang"
 )
 
 type device struct {

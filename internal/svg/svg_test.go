@@ -15,7 +15,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"djpken/go-fyne/internal/test"
+	"github.com/djpken/go-fyne/internal/test"
 )
 
 func TestColorize(t *testing.T) {

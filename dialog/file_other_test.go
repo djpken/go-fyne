@@ -5,7 +5,7 @@ package dialog
 import (
 	"testing"
 
-	"djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/storage"
 	"github.com/stretchr/testify/assert"
 )
 

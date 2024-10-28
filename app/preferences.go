@@ -7,8 +7,8 @@ import (
 	"sync"
 	"time"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal"
 )
 
 type preferences struct {

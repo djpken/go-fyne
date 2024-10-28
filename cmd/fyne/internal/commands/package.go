@@ -18,9 +18,9 @@ import (
 	"golang.org/x/mod/modfile"
 	"golang.org/x/mod/module"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 
-	"djpken/go-fyne/internal/metadata"
+	"github.com/djpken/go-fyne/internal/metadata"
 )
 
 const (

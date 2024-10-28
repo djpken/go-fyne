@@ -6,7 +6,7 @@ package binding
 import (
 	"fmt"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 func internalFloatToInt(val float64) (int, error) {

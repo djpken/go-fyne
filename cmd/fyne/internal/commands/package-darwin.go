@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"djpken/go-fyne/cmd/fyne/internal/templates"
+	"github.com/djpken/go-fyne/cmd/fyne/internal/templates"
 	"github.com/fogleman/gg"
 	"github.com/nfnt/resize"
 

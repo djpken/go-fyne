@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // Exists will return true if the passed path exists on the current system.

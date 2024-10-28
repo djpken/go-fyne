@@ -1,9 +1,9 @@
 package container
 
 import (
-	"djpken/go-fyne"
-	intWidget "djpken/go-fyne/internal/widget"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	intWidget "github.com/djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne/widget"
 )
 
 // MultipleWindows is a container that handles multiple `InnerWindow` containers.

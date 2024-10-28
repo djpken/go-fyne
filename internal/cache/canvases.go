@@ -3,7 +3,7 @@ package cache
 import (
 	"sync"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 var canvasesLock sync.RWMutex

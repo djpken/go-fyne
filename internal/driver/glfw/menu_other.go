@@ -2,7 +2,7 @@
 
 package glfw
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 func hasNativeMenu() bool {
 	return false

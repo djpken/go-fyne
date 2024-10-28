@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 func BenchmarkRunnerAllocs(b *testing.B) {

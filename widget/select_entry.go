@@ -1,8 +1,8 @@
 package widget
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/theme"
 )
 
 // SelectEntry is an input field which supports selecting from a fixed set of options.

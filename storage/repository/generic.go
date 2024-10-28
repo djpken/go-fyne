@@ -4,7 +4,7 @@ import (
 	"io"
 	"strings"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // splitNonEmpty works exactly like strings.Split(), but only returns non-empty

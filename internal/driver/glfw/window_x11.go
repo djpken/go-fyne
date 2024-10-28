@@ -2,7 +2,7 @@
 
 package glfw
 
-import "djpken/go-fyne/driver"
+import "github.com/djpken/go-fyne/driver"
 
 // assert we are implementing driver.NativeWindow
 var _ driver.NativeWindow = (*window)(nil)

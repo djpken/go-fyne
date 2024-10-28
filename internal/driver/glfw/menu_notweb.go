@@ -3,8 +3,8 @@
 package glfw
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/lang"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/lang"
 )
 
 func addMissingQuitForMainMenu(menus *fyne.MainMenu, w *window) *fyne.MainMenu {

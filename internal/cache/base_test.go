@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 	"github.com/stretchr/testify/assert"
 )
 

@@ -3,10 +3,10 @@ package tutorials
 import (
 	"time"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/driver/desktop"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/driver/desktop"
+	"github.com/djpken/go-fyne/widget"
 )
 
 func windowScreen(_ fyne.Window) fyne.CanvasObject {

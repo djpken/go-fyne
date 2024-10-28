@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/storage"
-	"djpken/go-fyne/storage/repository"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/storage/repository"
 )
 
 // fileSchemePrefix is used for when we need a hard-coded version of "file://"

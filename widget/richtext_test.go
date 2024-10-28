@@ -6,12 +6,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/cache"
-	"djpken/go-fyne/internal/widget"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
 )
 
 func richTextRenderTexts(rich fyne.Widget) []*canvas.Text {

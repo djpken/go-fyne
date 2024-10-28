@@ -18,7 +18,7 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 func (a *fyneApp) OpenURL(url *url.URL) error {

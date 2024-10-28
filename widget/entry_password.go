@@ -1,10 +1,10 @@
 package widget
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/driver/desktop"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/driver/desktop"
+	"github.com/djpken/go-fyne/theme"
 )
 
 var _ desktop.Cursorable = (*passwordRevealer)(nil)

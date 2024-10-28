@@ -1,9 +1,9 @@
 package container
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/cache"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/widget"
 )
 
 // ThemeOverride is a container where the child widgets are themed by the specified theme.

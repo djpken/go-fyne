@@ -4,7 +4,7 @@ import (
 	"image"
 	"testing"
 
-	"djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/canvas"
 
 	"github.com/stretchr/testify/assert"
 )

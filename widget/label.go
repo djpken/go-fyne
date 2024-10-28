@@ -1,9 +1,9 @@
 package widget
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/data/binding"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/data/binding"
+	"github.com/djpken/go-fyne/theme"
 )
 
 // Label widget is a label component with appropriate padding and layout.

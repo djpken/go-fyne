@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/lang"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/lang"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -3,7 +3,7 @@
 package dialog
 
 import (
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 func (f *fileDialog) loadPlaces() []fyne.CanvasObject {

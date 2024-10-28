@@ -1,12 +1,12 @@
 package glfw
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/driver/desktop"
-	"djpken/go-fyne/internal/widget"
-	"djpken/go-fyne/theme"
-	publicWidget "djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/driver/desktop"
+	"github.com/djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne/theme"
+	publicWidget "github.com/djpken/go-fyne/widget"
 )
 
 var _ desktop.Hoverable = (*menuBarItem)(nil)

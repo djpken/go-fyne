@@ -1,11 +1,11 @@
 package widget
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/driver/desktop"
-	"djpken/go-fyne/internal/cache"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/driver/desktop"
+	"github.com/djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/theme"
 )
 
 // ScrollDirection represents the directions in which a Scroll can scroll its child content.

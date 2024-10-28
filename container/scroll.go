@@ -1,8 +1,8 @@
 package container
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/widget"
 )
 
 // Scroll defines a container that is smaller than the Content.

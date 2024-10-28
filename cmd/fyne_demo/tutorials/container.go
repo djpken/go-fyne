@@ -5,11 +5,11 @@ import (
 	"image/color"
 	"strconv"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/cmd/fyne_demo/data"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/cmd/fyne_demo/data"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/widget"
 )
 
 // containerScreen loads a tab panel for containers

@@ -1,12 +1,12 @@
 package widget
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/repository/mime"
-	"djpken/go-fyne/internal/widget"
-	"djpken/go-fyne/storage"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/repository/mime"
+	"github.com/djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/theme"
 )
 
 const (

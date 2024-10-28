@@ -3,7 +3,7 @@ package binding
 import (
 	"sync"
 
-	"djpken/go-fyne/internal/async"
+	"github.com/djpken/go-fyne/internal/async"
 )
 
 var (

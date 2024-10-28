@@ -1,8 +1,8 @@
 package software
 
 import (
-	"djpken/go-fyne/internal/painter/software"
-	"djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/internal/painter/software"
+	"github.com/djpken/go-fyne/test"
 )
 
 // NewCanvas creates a new canvas in memory that can render without hardware support.

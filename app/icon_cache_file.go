@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"sync"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 var once sync.Once

@@ -1,6 +1,6 @@
 package desktop
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 // App defines the desktop specific extensions to a fyne.App.
 //

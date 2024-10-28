@@ -1,8 +1,8 @@
 package app
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/cache"
 )
 
 // ApplyThemeTo ensures that the specified canvasobject and all widgets and themeable objects will

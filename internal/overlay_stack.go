@@ -3,9 +3,9 @@ package internal
 import (
 	"sync"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/app"
-	"djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/app"
+	"github.com/djpken/go-fyne/internal/widget"
 )
 
 // OverlayStack implements fyne.OverlayStack

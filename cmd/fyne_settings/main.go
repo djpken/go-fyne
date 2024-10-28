@@ -1,10 +1,10 @@
 package main
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/app"
-	"djpken/go-fyne/cmd/fyne_settings/settings"
-	"djpken/go-fyne/container"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/app"
+	"github.com/djpken/go-fyne/cmd/fyne_settings/settings"
+	"github.com/djpken/go-fyne/container"
 )
 
 func main() {

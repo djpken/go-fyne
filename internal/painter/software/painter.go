@@ -3,10 +3,10 @@ package software
 import (
 	"image"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/driver"
-	"djpken/go-fyne/internal/scale"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/driver"
+	"github.com/djpken/go-fyne/internal/scale"
 )
 
 // Painter is a simple software painter that can paint a canvas in memory.

@@ -1,16 +1,16 @@
 // Package widget defines the UI widgets within the Fyne toolkit.
-package widget // import "djpken/go-fyne/widget"
+package widget // import "github.com/djpken/go-fyne/widget"
 
 import (
 	"sync"
 	"sync/atomic"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/async"
-	"djpken/go-fyne/internal/cache"
-	internalWidget "djpken/go-fyne/internal/widget"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/async"
+	"github.com/djpken/go-fyne/internal/cache"
+	internalWidget "github.com/djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne/theme"
 )
 
 // BaseWidget provides a helper that handles basic widget behaviours.

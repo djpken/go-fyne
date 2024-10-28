@@ -2,7 +2,7 @@
 
 package mobile
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 // Content returns the clipboard content for mobile simulator runs
 func (c *mobileClipboard) Content() string {

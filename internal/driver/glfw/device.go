@@ -3,8 +3,8 @@ package glfw
 import (
 	"runtime"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/lang"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/lang"
 )
 
 type glDevice struct {

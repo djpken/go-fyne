@@ -4,7 +4,7 @@ import (
 	"sync"
 	"time"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 var (

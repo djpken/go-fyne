@@ -3,7 +3,7 @@ package commands
 import (
 	"os"
 
-	realUtil "djpken/go-fyne/cmd/fyne/internal/util"
+	realUtil "github.com/djpken/go-fyne/cmd/fyne/internal/util"
 )
 
 type packagerUtil interface {

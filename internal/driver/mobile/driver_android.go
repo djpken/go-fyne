@@ -2,7 +2,7 @@
 
 package mobile
 
-import driverDefs "djpken/go-fyne/driver"
+import driverDefs "github.com/djpken/go-fyne/driver"
 
 /*
 #include <stdbool.h>

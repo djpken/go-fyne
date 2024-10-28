@@ -3,7 +3,7 @@
 
 package data
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 var resourceFynePng = &fyne.StaticResource{
 	StaticName: "fyne.png",

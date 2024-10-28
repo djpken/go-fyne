@@ -10,7 +10,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 func assertCanvasSize(t *testing.T, w *window, size fyne.Size) {

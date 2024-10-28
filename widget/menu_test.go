@@ -3,11 +3,11 @@ package widget_test
 import (
 	"testing"
 
-	"djpken/go-fyne"
-	internalWidget "djpken/go-fyne/internal/widget"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	internalWidget "github.com/djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 
 	"github.com/stretchr/testify/assert"
 )

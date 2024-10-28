@@ -4,7 +4,7 @@ import (
 	"errors"
 	"reflect"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // DataMap is the base interface for all bindable data maps.

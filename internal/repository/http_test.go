@@ -6,8 +6,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"djpken/go-fyne/storage"
-	"djpken/go-fyne/storage/repository"
+	"github.com/djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/storage/repository"
 
 	"github.com/stretchr/testify/assert"
 )

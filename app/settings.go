@@ -6,10 +6,10 @@ import (
 	"path/filepath"
 	"sync"
 
-	"djpken/go-fyne"
-	internalapp "djpken/go-fyne/internal/app"
-	"djpken/go-fyne/internal/build"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	internalapp "github.com/djpken/go-fyne/internal/app"
+	"github.com/djpken/go-fyne/internal/build"
+	"github.com/djpken/go-fyne/theme"
 )
 
 var noAnimations bool // set to true at compile time if no_animations tag is passed

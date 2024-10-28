@@ -7,12 +7,12 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/driver/software"
-	"djpken/go-fyne/storage"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/driver/software"
+	"github.com/djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 )
 
 func TestFileIcon_NewFileIcon_Rendered(t *testing.T) {

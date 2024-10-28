@@ -1,6 +1,6 @@
 package app
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 func (a *fyneApp) SetCloudProvider(p fyne.CloudProvider) {
 	if p == nil {

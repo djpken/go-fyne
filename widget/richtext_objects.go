@@ -5,10 +5,10 @@ import (
 	"net/url"
 	"strconv"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/internal/scale"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/internal/scale"
+	"github.com/djpken/go-fyne/theme"
 )
 
 var (

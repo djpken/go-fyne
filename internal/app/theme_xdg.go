@@ -5,7 +5,7 @@ package app
 import (
 	"sync/atomic"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // CurrentVariant contains the system’s theme variant.

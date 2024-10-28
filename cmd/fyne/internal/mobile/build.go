@@ -16,7 +16,7 @@ import (
 	"runtime"
 	"strings"
 
-	"djpken/go-fyne/cmd/fyne/internal/util"
+	"github.com/djpken/go-fyne/cmd/fyne/internal/util"
 
 	"golang.org/x/sys/execabs"
 	"golang.org/x/tools/go/packages"
@@ -184,18 +184,18 @@ func runBuildImpl(cmd *command) (*packages.Package, error) {
 		}
 	}
 
-	if !nmpkgs["djpken/go-fyne/internal/driver/mobile/app"] {
-		return nil, fmt.Errorf(`%s does not import "djpken/go-fyne/internal/driver/mobile/app"`, pkg.PkgPath)
+	if !nmpkgs["github.com/djpken/go-fyne/internal/driver/mobile/app"] {
+		return nil, fmt.Errorf(`%s does not import "github.com/djpken/go-fyne/internal/driver/mobile/app"`, pkg.PkgPath)
 	}
 
 	return pkg, nil
 }
 
-var nmRE = regexp.MustCompile(`[0-9a-f]{8} t _?(?:.*/vendor/)?(djpken/go-fyne/internal/driver/mobile.*/[^.]*)`)
+var nmRE = regexp.MustCompile(`[0-9a-f]{8} t _?(?:.*/vendor/)?(github.com/djpken/go-fyne/internal/driver/mobile.*/[^.]*)`)
 
 func extractPkgs(nm string, path string) (map[string]bool, error) {
 	if buildN {
-		return map[string]bool{"djpken/go-fyne/internal/driver/mobile/app": true}, nil
+		return map[string]bool{"github.com/djpken/go-fyne/internal/driver/mobile/app": true}, nil
 	}
 	r, w := io.Pipe()
 	cmd := execabs.Command(nm, path)

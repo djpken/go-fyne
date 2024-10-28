@@ -1,7 +1,7 @@
 package lang
 
 import (
-	"djpken/go-fyne/internal/driver/mobile/app"
+	"github.com/djpken/go-fyne/internal/driver/mobile/app"
 
 	"github.com/jeandeaual/go-locale"
 )

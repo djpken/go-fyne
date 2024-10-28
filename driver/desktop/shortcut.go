@@ -4,7 +4,7 @@ import (
 	"runtime"
 	"strings"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // Declare conformity with Shortcut interface

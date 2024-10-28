@@ -5,7 +5,7 @@ import (
 	"image/color"
 	"math"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // LinearGradient defines a Gradient travelling straight at a given angle.

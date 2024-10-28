@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 func rootConfigDir() string {

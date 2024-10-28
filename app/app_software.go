@@ -3,9 +3,9 @@
 package app
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/painter/software"
-	"djpken/go-fyne/test"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/painter/software"
+	"github.com/djpken/go-fyne/test"
 )
 
 // NewWithID returns a new app instance using the test (headless) driver.

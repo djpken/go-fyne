@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne/storage"
-	"djpken/go-fyne/storage/repository"
+	"github.com/djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/storage/repository"
 )
 
 func TestFileRepositoryChild(t *testing.T) {

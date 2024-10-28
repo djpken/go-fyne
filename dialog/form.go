@@ -1,10 +1,10 @@
 package dialog
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 )
 
 // FormDialog is a simple dialog window for displaying FormItems inside a form.

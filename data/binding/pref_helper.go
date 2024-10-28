@@ -3,7 +3,7 @@ package binding
 import (
 	"sync"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 type preferenceItem interface {

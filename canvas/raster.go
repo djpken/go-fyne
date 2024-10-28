@@ -5,7 +5,7 @@ import (
 	"image/color"
 	"image/draw"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // Declare conformity with CanvasObject interface

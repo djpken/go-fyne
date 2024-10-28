@@ -6,11 +6,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/data/binding"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/data/binding"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/widget"
 )
 
 var globalProgressRenderer fyne.WidgetRenderer

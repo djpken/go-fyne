@@ -3,7 +3,7 @@ package desktop
 import (
 	"testing"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 func TestCustomShortcut_Shortcut(t *testing.T) {

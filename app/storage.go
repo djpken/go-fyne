@@ -3,9 +3,9 @@ package app
 import (
 	"os"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal"
-	"djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal"
+	"github.com/djpken/go-fyne/storage"
 )
 
 type store struct {

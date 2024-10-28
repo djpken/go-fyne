@@ -4,12 +4,12 @@ import (
 	"image/color"
 	"strconv"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/data/binding"
-	col "djpken/go-fyne/internal/color"
-	"djpken/go-fyne/internal/widget"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/data/binding"
+	col "github.com/djpken/go-fyne/internal/color"
+	"github.com/djpken/go-fyne/internal/widget"
+	"github.com/djpken/go-fyne/theme"
 )
 
 type progressRenderer struct {

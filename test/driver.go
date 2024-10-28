@@ -5,12 +5,12 @@ import (
 	"sync"
 	"time"
 
-	"djpken/go-fyne"
-	intdriver "djpken/go-fyne/internal/driver"
-	"djpken/go-fyne/internal/painter"
-	"djpken/go-fyne/internal/painter/software"
-	intRepo "djpken/go-fyne/internal/repository"
-	"djpken/go-fyne/storage/repository"
+	"github.com/djpken/go-fyne"
+	intdriver "github.com/djpken/go-fyne/internal/driver"
+	"github.com/djpken/go-fyne/internal/painter"
+	"github.com/djpken/go-fyne/internal/painter/software"
+	intRepo "github.com/djpken/go-fyne/internal/repository"
+	"github.com/djpken/go-fyne/storage/repository"
 )
 
 // SoftwarePainter describes a simple type that can render canvases

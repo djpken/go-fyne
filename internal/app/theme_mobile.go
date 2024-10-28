@@ -3,7 +3,7 @@
 package app
 
 import (
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // SystemTheme contains the system’s theme variant.

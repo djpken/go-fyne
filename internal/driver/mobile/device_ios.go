@@ -2,7 +2,7 @@
 
 package mobile
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 const tapYOffset = -12.0 // to compensate for how we hold our fingers on the device
 

@@ -3,8 +3,8 @@ package app
 import (
 	"sync/atomic"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/async"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/async"
 )
 
 var _ fyne.Lifecycle = (*Lifecycle)(nil)

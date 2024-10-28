@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 const (

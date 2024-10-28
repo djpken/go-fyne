@@ -7,13 +7,13 @@ import (
 	"math/cmplx"
 	"strings"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/container"
-	col "djpken/go-fyne/internal/color"
-	"djpken/go-fyne/lang"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/container"
+	col "github.com/djpken/go-fyne/internal/color"
+	"github.com/djpken/go-fyne/lang"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 )
 
 const (

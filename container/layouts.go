@@ -1,9 +1,9 @@
-package container // import "djpken/go-fyne/container"
+package container // import "github.com/djpken/go-fyne/container"
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal"
-	"djpken/go-fyne/layout"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal"
+	"github.com/djpken/go-fyne/layout"
 )
 
 // NewAdaptiveGrid creates a new container with the specified objects and using the grid layout.

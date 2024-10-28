@@ -2,6 +2,6 @@
 
 package theme
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 var emoji fyne.Resource

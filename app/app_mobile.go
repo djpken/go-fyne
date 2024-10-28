@@ -3,9 +3,9 @@
 package app
 
 import (
-	"djpken/go-fyne"
-	internalapp "djpken/go-fyne/internal/app"
-	"djpken/go-fyne/internal/driver/mobile"
+	"github.com/djpken/go-fyne"
+	internalapp "github.com/djpken/go-fyne/internal/app"
+	"github.com/djpken/go-fyne/internal/driver/mobile"
 )
 
 // NewWithID returns a new app instance using the appropriate runtime driver.

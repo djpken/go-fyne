@@ -2,7 +2,7 @@
 
 package cache
 
-import "djpken/go-fyne/internal/driver/mobile/gl"
+import "github.com/djpken/go-fyne/internal/driver/mobile/gl"
 
 // TextureType represents an uploaded GL texture
 type TextureType = gl.Texture

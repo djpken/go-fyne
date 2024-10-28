@@ -3,7 +3,7 @@ package theme
 import (
 	"image/color"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // FromLegacy returns a 2.0 Theme created from the given LegacyTheme data.

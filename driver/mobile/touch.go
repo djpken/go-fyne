@@ -1,6 +1,6 @@
 package mobile
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 // TouchEvent contains data relating to mobile touch events
 type TouchEvent struct {

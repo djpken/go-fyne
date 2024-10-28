@@ -1,7 +1,7 @@
 package mobile
 
 import (
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 const (

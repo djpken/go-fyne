@@ -4,12 +4,12 @@ import (
 	"image/color"
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/layout"
-	_ "djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/layout"
+	_ "github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
 
 	"github.com/stretchr/testify/assert"
 )

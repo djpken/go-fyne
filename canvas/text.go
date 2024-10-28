@@ -3,8 +3,8 @@ package canvas
 import (
 	"image/color"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/theme"
 )
 
 // Declare conformity with CanvasObject interface

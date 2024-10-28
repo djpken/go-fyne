@@ -1,8 +1,8 @@
 package layout
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/theme"
 )
 
 // Declare conformity with Layout interface

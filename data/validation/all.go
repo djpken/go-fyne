@@ -1,7 +1,7 @@
 package validation
 
 import (
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // NewAllStrings creates a validator that requires all of the passed string validators to pass.

@@ -6,11 +6,11 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/storage"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/widget"
 )
 
 func TestShowFolderOpen(t *testing.T) {

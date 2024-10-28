@@ -6,8 +6,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"djpken/go-fyne"
-	fynecanvas "djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne"
+	fynecanvas "github.com/djpken/go-fyne/canvas"
 )
 
 func Test_driver_AbsolutePositionForObject(t *testing.T) {

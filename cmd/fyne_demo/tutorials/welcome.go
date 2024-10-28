@@ -5,13 +5,13 @@ import (
 	"net/url"
 	"strings"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/cmd/fyne_demo/data"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/layout"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/cmd/fyne_demo/data"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/layout"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 )
 
 func parseURL(urlStr string) *url.URL {

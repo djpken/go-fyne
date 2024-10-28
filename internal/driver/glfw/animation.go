@@ -1,6 +1,6 @@
 package glfw
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 func (d *gLDriver) StartAnimation(a *fyne.Animation) {
 	d.animation.Start(a)

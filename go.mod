@@ -1,4 +1,4 @@
-module djpken/go-fyne
+module github.com/djpken/go-fyne
 
 go 1.19
 

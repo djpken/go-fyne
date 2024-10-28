@@ -6,7 +6,7 @@ import (
 	"sync"
 	"testing"
 
-	"djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/internal/cache"
 )
 
 // go test -race

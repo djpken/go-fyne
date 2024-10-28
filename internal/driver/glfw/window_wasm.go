@@ -8,12 +8,12 @@ import (
 	"runtime"
 	"sync"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/driver/desktop"
-	"djpken/go-fyne/internal/driver/common"
-	"djpken/go-fyne/internal/painter/gl"
-	"djpken/go-fyne/internal/scale"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/driver/desktop"
+	"github.com/djpken/go-fyne/internal/driver/common"
+	"github.com/djpken/go-fyne/internal/painter/gl"
+	"github.com/djpken/go-fyne/internal/scale"
 
 	"github.com/fyne-io/glfw-js"
 )

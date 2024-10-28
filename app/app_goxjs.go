@@ -8,7 +8,7 @@ import (
 	"net/http"
 	"syscall/js"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 func (a *fyneApp) SendNotification(n *fyne.Notification) {

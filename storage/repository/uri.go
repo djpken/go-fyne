@@ -7,7 +7,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // Declare conformance with fyne.URI interface.

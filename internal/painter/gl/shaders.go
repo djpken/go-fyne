@@ -3,7 +3,7 @@
 
 package gl
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 var shaderLineFrag = &fyne.StaticResource{
 	StaticName: "line.frag",

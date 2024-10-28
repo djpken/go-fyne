@@ -3,7 +3,7 @@
 
 package settings
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 var resourceAppearanceSvg = &fyne.StaticResource{
 	StaticName: "appearance.svg",

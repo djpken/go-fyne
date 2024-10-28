@@ -2,7 +2,7 @@
 
 package glfw
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 func addMissingQuitForMainMenu(menus *fyne.MainMenu, w *window) *fyne.MainMenu {
 	// no-op for a web browser

@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/build"
-	"djpken/go-fyne/internal/metadata"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/build"
+	"github.com/djpken/go-fyne/internal/metadata"
 )
 
 func checkLocalMetadata() {

@@ -1,6 +1,6 @@
 package internal
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 // ClipStack keeps track of the areas that should be clipped when drawing a canvas.
 // If no clips are present then adding one will be added as-is.

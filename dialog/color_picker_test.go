@@ -3,10 +3,10 @@ package dialog
 import (
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
 )
 
 func Test_colorGreyscalePicker_Layout(t *testing.T) {

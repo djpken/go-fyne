@@ -5,10 +5,10 @@ package dialog
 import (
 	"strconv"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/driver"
-	"djpken/go-fyne/internal/build"
-	"djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/driver"
+	"github.com/djpken/go-fyne/internal/build"
+	"github.com/djpken/go-fyne/storage"
 	"github.com/rymdport/portal/filechooser"
 )
 

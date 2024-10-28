@@ -3,7 +3,7 @@
 
 package theme
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 var fynelogo = &fyne.StaticResource{
 	StaticName:    "fyne.png",

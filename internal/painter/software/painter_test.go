@@ -5,14 +5,14 @@ import (
 	"image/color"
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/internal/painter/software"
-	internalTest "djpken/go-fyne/internal/test"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/internal/painter/software"
+	internalTest "github.com/djpken/go-fyne/internal/test"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 )
 
 func makeTestImage(w, h int) image.Image {

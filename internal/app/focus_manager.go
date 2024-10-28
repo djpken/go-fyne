@@ -3,8 +3,8 @@ package app
 import (
 	"sync"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal/driver"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal/driver"
 )
 
 // FocusManager represents a standard manager of input focus for a canvas

@@ -5,7 +5,7 @@ package glfw
 import (
 	"unsafe"
 
-	"djpken/go-fyne/driver"
+	"github.com/djpken/go-fyne/driver"
 )
 
 // assert we are implementing driver.NativeWindow

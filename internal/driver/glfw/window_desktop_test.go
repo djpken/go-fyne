@@ -5,8 +5,8 @@ package glfw
 import (
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/driver/desktop"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/driver/desktop"
 	"github.com/go-gl/glfw/v3.3/glfw"
 	"github.com/stretchr/testify/assert"
 )

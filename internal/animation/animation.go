@@ -4,7 +4,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 type anim struct {

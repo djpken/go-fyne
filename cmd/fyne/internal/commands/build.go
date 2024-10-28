@@ -11,9 +11,9 @@ import (
 	"github.com/mcuadros/go-version"
 	"github.com/urfave/cli/v2"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/cmd/fyne/internal/templates"
-	"djpken/go-fyne/internal/metadata"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/cmd/fyne/internal/templates"
+	"github.com/djpken/go-fyne/internal/metadata"
 )
 
 // Builder generate the executables.
@@ -151,12 +151,12 @@ func getFyneGoModVersion(runner runner) (string, error) {
 		return "", err
 	}
 
-	if parsed.Module.Path == "djpken/go-fyne" {
+	if parsed.Module.Path == "github.com/djpken/go-fyne" {
 		return "master", nil
 	}
 
 	for _, dep := range parsed.Require {
-		if dep.Path == "djpken/go-fyne" {
+		if dep.Path == "github.com/djpken/go-fyne" {
 			return dep.Version, nil
 		}
 	}

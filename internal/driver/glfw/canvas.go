@@ -4,16 +4,16 @@ import (
 	"image"
 	"math"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/internal"
-	"djpken/go-fyne/internal/app"
-	"djpken/go-fyne/internal/build"
-	"djpken/go-fyne/internal/driver"
-	"djpken/go-fyne/internal/driver/common"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/internal"
+	"github.com/djpken/go-fyne/internal/app"
+	"github.com/djpken/go-fyne/internal/build"
+	"github.com/djpken/go-fyne/internal/driver"
+	"github.com/djpken/go-fyne/internal/driver/common"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 )
 
 // Declare conformity with Canvas interface

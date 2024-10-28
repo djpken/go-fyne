@@ -6,14 +6,14 @@ import (
 	"math"
 	"time"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/driver/mobile"
-	"djpken/go-fyne/internal/app"
-	intdriver "djpken/go-fyne/internal/driver"
-	"djpken/go-fyne/internal/driver/common"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/driver/mobile"
+	"github.com/djpken/go-fyne/internal/app"
+	intdriver "github.com/djpken/go-fyne/internal/driver"
+	"github.com/djpken/go-fyne/internal/driver/common"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 )
 
 var _ fyne.Canvas = (*canvas)(nil)

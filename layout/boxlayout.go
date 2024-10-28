@@ -1,8 +1,8 @@
 package layout
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/theme"
 )
 
 // NewVBoxLayout returns a vertical box layout for stacking a number of child

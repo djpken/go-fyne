@@ -5,10 +5,10 @@ import (
 	"sync"
 	"time"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	col "djpken/go-fyne/internal/color"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	col "github.com/djpken/go-fyne/internal/color"
+	"github.com/djpken/go-fyne/theme"
 )
 
 const (

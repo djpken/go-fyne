@@ -3,13 +3,13 @@ package widget
 import (
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/data/binding"
-	"djpken/go-fyne/internal/cache"
-	"djpken/go-fyne/internal/painter/software"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/data/binding"
+	"github.com/djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/internal/painter/software"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/theme"
 
 	"github.com/stretchr/testify/assert"
 )

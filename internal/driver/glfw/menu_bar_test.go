@@ -6,11 +6,11 @@ import (
 	"strconv"
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/container"
-	"djpken/go-fyne/internal/driver/glfw"
-	"djpken/go-fyne/test"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/container"
+	"github.com/djpken/go-fyne/internal/driver/glfw"
+	"github.com/djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/widget"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

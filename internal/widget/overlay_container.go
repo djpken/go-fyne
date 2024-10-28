@@ -1,8 +1,8 @@
 package widget
 
 import (
-	"djpken/go-fyne"
-	"djpken/go-fyne/driver/desktop"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/driver/desktop"
 )
 
 var _ fyne.Widget = (*OverlayContainer)(nil)

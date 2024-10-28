@@ -1,6 +1,6 @@
 package widget
 
-import "djpken/go-fyne"
+import "github.com/djpken/go-fyne"
 
 // BaseRenderer is a renderer base providing the most common implementations of a part of the
 // widget.Renderer interface.

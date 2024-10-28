@@ -4,9 +4,9 @@ import (
 	"image/color"
 	"testing"
 
-	"djpken/go-fyne"
-	intRepo "djpken/go-fyne/internal/repository"
-	"djpken/go-fyne/storage/repository"
+	"github.com/djpken/go-fyne"
+	intRepo "github.com/djpken/go-fyne/internal/repository"
+	"github.com/djpken/go-fyne/storage/repository"
 
 	"github.com/stretchr/testify/assert"
 )

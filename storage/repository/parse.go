@@ -8,7 +8,7 @@ import (
 
 	uriParser "github.com/fredbi/uri"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // NewFileURI implements the back-end logic to storage.NewFileURI, which you

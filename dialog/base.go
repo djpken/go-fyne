@@ -1,16 +1,16 @@
 // Package dialog defines standard dialog windows for application GUIs.
-package dialog // import "djpken/go-fyne/dialog"
+package dialog // import "github.com/djpken/go-fyne/dialog"
 
 import (
 	"image/color"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/container"
-	col "djpken/go-fyne/internal/color"
-	"djpken/go-fyne/layout"
-	"djpken/go-fyne/theme"
-	"djpken/go-fyne/widget"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/container"
+	col "github.com/djpken/go-fyne/internal/color"
+	"github.com/djpken/go-fyne/layout"
+	"github.com/djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne/widget"
 )
 
 const (

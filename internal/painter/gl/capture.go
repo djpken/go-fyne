@@ -4,7 +4,7 @@ import (
 	"image"
 	"image/color"
 
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 type captureImage struct {

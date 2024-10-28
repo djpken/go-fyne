@@ -5,11 +5,11 @@ import (
 	"runtime"
 	"testing"
 
-	intRepo "djpken/go-fyne/internal/repository"
-	"djpken/go-fyne/storage"
-	"djpken/go-fyne/storage/repository"
+	intRepo "github.com/djpken/go-fyne/internal/repository"
+	"github.com/djpken/go-fyne/storage"
+	"github.com/djpken/go-fyne/storage/repository"
 
-	_ "djpken/go-fyne/test"
+	_ "github.com/djpken/go-fyne/test"
 
 	"github.com/stretchr/testify/assert"
 )

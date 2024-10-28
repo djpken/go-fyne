@@ -9,9 +9,9 @@ import (
 	"strings"
 	"testing"
 
-	"djpken/go-fyne/canvas"
-	"djpken/go-fyne/storage"
-	_ "djpken/go-fyne/test"
+	"github.com/djpken/go-fyne/canvas"
+	"github.com/djpken/go-fyne/storage"
+	_ "github.com/djpken/go-fyne/test"
 
 	"github.com/stretchr/testify/assert"
 )

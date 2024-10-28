@@ -1,7 +1,7 @@
 package widget
 
 import (
-	"djpken/go-fyne"
+	"github.com/djpken/go-fyne"
 )
 
 // ShadowingRenderer is a renderer that adds a shadow arount the rendered content.

@@ -1,18 +1,18 @@
 // Package test provides utility drivers for running UI tests without rendering to a screen.
-package test // import "djpken/go-fyne/test"
+package test // import "github.com/djpken/go-fyne/test"
 
 import (
 	"net/url"
 	"sync"
 	"testing"
 
-	"djpken/go-fyne"
-	"djpken/go-fyne/internal"
-	intapp "djpken/go-fyne/internal/app"
-	"djpken/go-fyne/internal/cache"
-	"djpken/go-fyne/internal/painter"
-	"djpken/go-fyne/internal/test"
-	"djpken/go-fyne/theme"
+	"github.com/djpken/go-fyne"
+	"github.com/djpken/go-fyne/internal"
+	intapp "github.com/djpken/go-fyne/internal/app"
+	"github.com/djpken/go-fyne/internal/cache"
+	"github.com/djpken/go-fyne/internal/painter"
+	"github.com/djpken/go-fyne/internal/test"
+	"github.com/djpken/go-fyne/theme"
 )
 
 // ensure we have a dummy app loaded and ready to test
