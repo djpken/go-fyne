@@ -136,6 +136,18 @@ func (t *StaticTable) RefreshItem(id TableCellID) {
 	r.(*staticTableCellsRenderer).refreshForID(id)
 }
 
+func (t *StaticTable) RefreshNew() {
+	if t.cells == nil {
+		return
+	}
+	r := cache.Renderer(t.cells)
+	if r == nil {
+		return
+	}
+
+	r.(*staticTableCellsRenderer).refreshNew()
+}
+
 // SetColumnWidth supports changing the width of the specified column. Columns normally take the width of the template
 // cell returned from the CreateCell callback. The width parameter uses the same units as a fyne.Size type and refers
 // to the internal content width not including the divider size.
@@ -883,8 +895,17 @@ func (r *staticTableCellsRenderer) scroll() {
 	}
 	r.moveIndicators()
 }
-
 func (r *staticTableCellsRenderer) refreshForID(toDraw TableCellID) {
+
+	updateCell := r.cells.t.UpdateCell
+	if updateCell == nil {
+		fyne.LogError("Missing UpdateCell callback required for StaticTable", nil)
+	}
+	cell := r.visible[toDraw]
+	updateCell(toDraw, cell)
+}
+
+func (r *staticTableCellsRenderer) refreshNew() {
 	th := r.cells.t.Theme()
 	v := fyne.CurrentApp().Settings().ThemeVariant()
 
@@ -973,10 +994,6 @@ func (r *staticTableCellsRenderer) refreshForID(toDraw TableCellID) {
 
 	if updateCell != nil {
 		for id, cell := range visible {
-			if toDraw != allTableCellsID && toDraw != id {
-				continue
-			}
-
 			updateCell(id, cell)
 		}
 	}
