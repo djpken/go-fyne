@@ -3,7 +3,7 @@ package scale
 import (
 	"math"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 // ToScreenCoordinate converts a fyne coordinate in the given canvas to a screen coordinate

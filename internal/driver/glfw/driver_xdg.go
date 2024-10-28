@@ -8,7 +8,7 @@ import (
 
 	"github.com/godbus/dbus/v5"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 var inhibitCookie uint32

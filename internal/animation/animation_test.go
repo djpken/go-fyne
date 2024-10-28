@@ -9,7 +9,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 func TestGLDriver_StartAnimation(t *testing.T) {

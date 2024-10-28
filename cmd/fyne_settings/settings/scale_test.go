@@ -3,10 +3,10 @@ package settings
 import (
 	"testing"
 
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/test"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/test"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 	"github.com/stretchr/testify/assert"
 )
 

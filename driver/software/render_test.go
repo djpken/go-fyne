@@ -4,14 +4,14 @@ import (
 	"image/color"
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/internal/painter"
-	"fyne.io/fyne/v2/test"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/internal/painter"
+	"djpken/go-fyne/test"
 
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 func TestRender(t *testing.T) {

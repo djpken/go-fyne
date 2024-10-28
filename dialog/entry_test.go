@@ -3,7 +3,7 @@ package dialog
 import (
 	"testing"
 
-	"fyne.io/fyne/v2/test"
+	"djpken/go-fyne/test"
 	"github.com/stretchr/testify/assert"
 )
 

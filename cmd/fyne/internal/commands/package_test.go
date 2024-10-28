@@ -10,7 +10,7 @@ import (
 	"github.com/josephspurrier/goversioninfo"
 	"github.com/stretchr/testify/assert"
 
-	"fyne.io/fyne/v2/internal/metadata"
+	"djpken/go-fyne/internal/metadata"
 )
 
 func Test_calculateExeName(t *testing.T) {
@@ -161,7 +161,7 @@ func Test_buildPackageWasm(t *testing.T) {
 		{
 			expectedValue: expectedValue{args: []string{"mod", "edit", "-json"}},
 			mockReturn: mockReturn{
-				ret: []byte("{ \"Module\": { \"Path\": \"fyne.io/fyne/v2\"} }"),
+				ret: []byte("{ \"Module\": { \"Path\": \"djpken/go-fyne\"} }"),
 			},
 		},
 		{
@@ -195,7 +195,7 @@ func Test_PackageWasm(t *testing.T) {
 		{
 			expectedValue: expectedValue{args: []string{"mod", "edit", "-json"}},
 			mockReturn: mockReturn{
-				ret: []byte("{ \"Module\": { \"Path\": \"fyne.io/fyne/v2\"} }"),
+				ret: []byte("{ \"Module\": { \"Path\": \"djpken/go-fyne\"} }"),
 			},
 		},
 		{

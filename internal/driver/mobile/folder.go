@@ -3,7 +3,7 @@ package mobile
 import (
 	"errors"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 type lister struct {

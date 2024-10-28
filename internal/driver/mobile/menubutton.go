@@ -1,10 +1,10 @@
 package mobile
 
 import (
-	"fyne.io/fyne/v2"
-	fynecanvas "fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	fynecanvas "djpken/go-fyne/canvas"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 type menuButton struct {

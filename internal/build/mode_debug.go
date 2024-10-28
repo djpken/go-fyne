@@ -2,7 +2,7 @@
 
 package build
 
-import "fyne.io/fyne/v2"
+import "djpken/go-fyne"
 
 // Mode is the application's build mode.
 const Mode = fyne.BuildDebug

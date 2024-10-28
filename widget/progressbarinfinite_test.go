@@ -4,9 +4,9 @@ import (
 	"testing"
 	"time"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/internal/cache"
-	"fyne.io/fyne/v2/test"
+	"djpken/go-fyne"
+	"djpken/go-fyne/internal/cache"
+	"djpken/go-fyne/test"
 	"github.com/stretchr/testify/assert"
 )
 

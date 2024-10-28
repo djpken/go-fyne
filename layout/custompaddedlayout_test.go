@@ -4,10 +4,10 @@ import (
 	"image/color"
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/layout"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/layout"
 	"github.com/stretchr/testify/assert"
 )
 

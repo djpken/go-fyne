@@ -6,7 +6,7 @@ package binding
 import (
 	"bytes"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 // BoolList supports binding a list of bool values.

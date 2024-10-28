@@ -4,11 +4,11 @@ import (
 	"image/color"
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/driver/desktop"
-	"fyne.io/fyne/v2/internal/cache"
-	"fyne.io/fyne/v2/test"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/driver/desktop"
+	"djpken/go-fyne/internal/cache"
+	"djpken/go-fyne/test"
+	"djpken/go-fyne/theme"
 
 	"github.com/stretchr/testify/assert"
 )

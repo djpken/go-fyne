@@ -11,8 +11,8 @@ import (
 	"strings"
 	"syscall"
 
-	"fyne.io/fyne/v2"
-	internalapp "fyne.io/fyne/v2/internal/app"
+	"djpken/go-fyne"
+	internalapp "djpken/go-fyne/internal/app"
 )
 
 const notificationTemplate = `$title = "%s"

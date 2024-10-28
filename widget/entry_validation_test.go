@@ -4,9 +4,9 @@ import (
 	"errors"
 	"testing"
 
-	"fyne.io/fyne/v2/data/validation"
-	"fyne.io/fyne/v2/test"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne/data/validation"
+	"djpken/go-fyne/test"
+	"djpken/go-fyne/widget"
 
 	"github.com/stretchr/testify/assert"
 )

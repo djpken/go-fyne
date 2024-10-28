@@ -3,11 +3,11 @@ package container
 import (
 	"image/color"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/layout"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/layout"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 // Declare conformity with Widget interface.

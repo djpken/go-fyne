@@ -6,14 +6,14 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/internal"
-	"fyne.io/fyne/v2/internal/app"
-	"fyne.io/fyne/v2/internal/async"
-	"fyne.io/fyne/v2/internal/cache"
-	"fyne.io/fyne/v2/internal/driver"
-	"fyne.io/fyne/v2/internal/painter/gl"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/internal"
+	"djpken/go-fyne/internal/app"
+	"djpken/go-fyne/internal/async"
+	"djpken/go-fyne/internal/cache"
+	"djpken/go-fyne/internal/driver"
+	"djpken/go-fyne/internal/painter/gl"
 )
 
 // SizeableCanvas defines a canvas with size related functions.

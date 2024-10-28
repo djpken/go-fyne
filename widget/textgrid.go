@@ -6,12 +6,12 @@ import (
 	"strconv"
 	"strings"
 
-	"fyne.io/fyne/v2/internal/cache"
-	"fyne.io/fyne/v2/internal/painter"
+	"djpken/go-fyne/internal/cache"
+	"djpken/go-fyne/internal/painter"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/theme"
 )
 
 const (

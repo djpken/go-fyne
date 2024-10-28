@@ -4,13 +4,13 @@ import (
 	"math"
 	"strconv"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/driver/desktop"
-	"fyne.io/fyne/v2/driver/mobile"
-	"fyne.io/fyne/v2/internal/cache"
-	"fyne.io/fyne/v2/internal/widget"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/driver/desktop"
+	"djpken/go-fyne/driver/mobile"
+	"djpken/go-fyne/internal/cache"
+	"djpken/go-fyne/internal/widget"
+	"djpken/go-fyne/theme"
 )
 
 const noCellMatch = math.MaxInt
@@ -32,7 +32,7 @@ type TableCellID struct {
 	Col int
 }
 
-// Table widget is a grid of items that can be scrolled and a cell selected.
+// StaticTable widget is a grid of items that can be scrolled and a cell selected.
 // Its performance is provided by caching cell templates created with CreateCell and re-using them with UpdateCell.
 // The size of the content rows/columns is returned by the Length callback.
 //
@@ -219,7 +219,7 @@ func (t *Table) FocusGained() {
 	t.RefreshItem(t.currentFocus)
 }
 
-// FocusLost is called after this Table has lost focus.
+// FocusLost is called after this StaticTable has lost focus.
 //
 // Implements: fyne.Focusable
 func (t *Table) FocusLost() {
@@ -360,7 +360,7 @@ func (t *Table) TouchUp(*mobile.TouchEvent) {
 func (t *Table) TouchCancel(*mobile.TouchEvent) {
 }
 
-// TypedKey is called if a key event happens while this Table is focused.
+// TypedKey is called if a key event happens while this StaticTable is focused.
 //
 // Implements: fyne.Focusable
 func (t *Table) TypedKey(event *fyne.KeyEvent) {
@@ -408,7 +408,7 @@ func (t *Table) TypedKey(event *fyne.KeyEvent) {
 	}
 }
 
-// TypedRune is called if a text event happens while this Table is focused.
+// TypedRune is called if a text event happens while this StaticTable is focused.
 //
 // Implements: fyne.Focusable
 func (t *Table) TypedRune(_ rune) {
@@ -805,7 +805,7 @@ func (t *Table) templateSize() fyne.Size {
 		return template.MinSize().Max(t.createHeader().MinSize())
 	}
 
-	fyne.LogError("Missing CreateCell callback required for Table", nil)
+	fyne.LogError("Missing CreateCell callback required for StaticTable", nil)
 	return fyne.Size{}
 }
 
@@ -1219,7 +1219,7 @@ func (r *tableCellsRenderer) MinSize() fyne.Size {
 	if f := r.cells.t.Length; f != nil {
 		rows, cols = r.cells.t.Length()
 	} else {
-		fyne.LogError("Missing Length callback required for Table", nil)
+		fyne.LogError("Missing Length callback required for StaticTable", nil)
 	}
 
 	stickRows := r.cells.t.StickyRowCount
@@ -1286,7 +1286,7 @@ func (r *tableCellsRenderer) refreshForID(toDraw TableCellID) {
 
 	updateCell := r.cells.t.UpdateCell
 	if updateCell == nil {
-		fyne.LogError("Missing UpdateCell callback required for Table", nil)
+		fyne.LogError("Missing UpdateCell callback required for StaticTable", nil)
 	}
 
 	var cellXOffset, cellYOffset float32
@@ -1585,11 +1585,11 @@ func (r *tableCellsRenderer) moveMarker(marker fyne.CanvasObject, row, col int, 
 		marker.Hide()
 	} else {
 		left := x1
-		if col >= stickCols { // clip X
+		if col >= stickCols { // staticClip X
 			left = fyne.Max(r.cells.t.stuckXOff+r.cells.t.stuckWidth, x1)
 		}
 		top := y1
-		if row >= stickRows { // clip Y
+		if row >= stickRows { // staticClip Y
 			top = fyne.Max(r.cells.t.stuckYOff+r.cells.t.stuckHeight, y1)
 		}
 		marker.Move(fyne.NewPos(left, top))

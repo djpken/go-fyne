@@ -6,12 +6,12 @@ import (
 	"strings"
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/internal/cache"
-	col "fyne.io/fyne/v2/internal/color"
-	"fyne.io/fyne/v2/test"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/internal/cache"
+	col "djpken/go-fyne/internal/color"
+	"djpken/go-fyne/test"
+	"djpken/go-fyne/theme"
 
 	"github.com/stretchr/testify/assert"
 )

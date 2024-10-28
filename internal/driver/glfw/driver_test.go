@@ -6,10 +6,10 @@ import (
 	"sync"
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/internal/cache"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/internal/cache"
+	"djpken/go-fyne/widget"
 
 	"github.com/stretchr/testify/assert"
 )

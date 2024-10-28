@@ -4,7 +4,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 // CanvasObjectQueue implements lock-free FIFO freelist based queue.

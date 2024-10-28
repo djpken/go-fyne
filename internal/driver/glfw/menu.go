@@ -1,7 +1,7 @@
 package glfw
 
 import (
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 func buildMenuOverlay(menus *fyne.MainMenu, w *window) fyne.CanvasObject {

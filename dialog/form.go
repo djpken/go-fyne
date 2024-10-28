@@ -1,10 +1,10 @@
 package dialog
 
 import (
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 // FormDialog is a simple dialog window for displaying FormItems inside a form.

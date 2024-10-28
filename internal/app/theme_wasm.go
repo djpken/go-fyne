@@ -5,8 +5,8 @@ package app
 import (
 	"syscall/js"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/theme"
 )
 
 // DefaultVariant returns the systems default fyne.ThemeVariant.

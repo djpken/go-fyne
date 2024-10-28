@@ -5,13 +5,13 @@ import (
 	"image/draw"
 	"sync"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/driver/desktop"
-	"fyne.io/fyne/v2/internal"
-	intapp "fyne.io/fyne/v2/internal/app"
-	"fyne.io/fyne/v2/internal/cache"
-	"fyne.io/fyne/v2/internal/scale"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/driver/desktop"
+	"djpken/go-fyne/internal"
+	intapp "djpken/go-fyne/internal/app"
+	"djpken/go-fyne/internal/cache"
+	"djpken/go-fyne/internal/scale"
+	"djpken/go-fyne/theme"
 )
 
 var dummyCanvas WindowlessCanvas

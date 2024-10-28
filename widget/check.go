@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"image/color"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/data/binding"
-	"fyne.io/fyne/v2/driver/desktop"
-	"fyne.io/fyne/v2/internal/widget"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/data/binding"
+	"djpken/go-fyne/driver/desktop"
+	"djpken/go-fyne/internal/widget"
+	"djpken/go-fyne/theme"
 )
 
 // Check widget has a text label and a checked (or unchecked) icon and triggers an event func when toggled

@@ -1,9 +1,9 @@
 package widget
 
 import (
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/internal/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/internal/widget"
 )
 
 // RadioGroup widget has a list of text labels and checks check icons next to each.

@@ -5,7 +5,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 var (

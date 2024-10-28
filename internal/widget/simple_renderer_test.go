@@ -4,10 +4,10 @@ import (
 	"image/color"
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/internal/widget"
-	"fyne.io/fyne/v2/test"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/internal/widget"
+	"djpken/go-fyne/test"
 )
 
 func TestNewSimpleRenderer(t *testing.T) {

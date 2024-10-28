@@ -1,4 +1,4 @@
-module fyne.io/fyne/v2
+module djpken/go-fyne
 
 go 1.19
 

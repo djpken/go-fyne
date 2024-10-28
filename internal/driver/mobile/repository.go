@@ -1,9 +1,9 @@
 package mobile
 
 import (
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 
-	"fyne.io/fyne/v2/storage/repository"
+	"djpken/go-fyne/storage/repository"
 )
 
 // declare conformance with repository types

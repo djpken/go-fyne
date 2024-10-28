@@ -3,7 +3,7 @@ package binding
 import (
 	"fmt"
 
-	"fyne.io/fyne/v2/storage"
+	"djpken/go-fyne/storage"
 )
 
 type sprintfString struct {

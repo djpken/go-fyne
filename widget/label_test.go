@@ -3,13 +3,13 @@ package widget
 import (
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/data/binding"
-	"fyne.io/fyne/v2/internal/cache"
-	"fyne.io/fyne/v2/internal/painter/software"
-	"fyne.io/fyne/v2/test"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/data/binding"
+	"djpken/go-fyne/internal/cache"
+	"djpken/go-fyne/internal/painter/software"
+	"djpken/go-fyne/test"
+	"djpken/go-fyne/theme"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -1,11 +1,11 @@
 package dialog
 
 import (
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/lang"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/lang"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 // ConfirmDialog is like the standard Dialog but with an additional confirmation button

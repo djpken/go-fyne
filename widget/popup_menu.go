@@ -1,8 +1,8 @@
 package widget
 
 import (
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/internal/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/internal/widget"
 )
 
 var _ fyne.Widget = (*PopUpMenu)(nil)

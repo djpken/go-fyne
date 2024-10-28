@@ -3,8 +3,8 @@ package async_test
 import (
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/internal/async"
+	"djpken/go-fyne"
+	"djpken/go-fyne/internal/async"
 	"github.com/stretchr/testify/assert"
 )
 

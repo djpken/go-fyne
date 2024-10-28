@@ -3,8 +3,8 @@ package dialog
 import (
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/test"
+	"djpken/go-fyne"
+	"djpken/go-fyne/test"
 )
 
 func Test_colorWheel_Layout(t *testing.T) {

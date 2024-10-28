@@ -2,7 +2,7 @@
 
 package mobile
 
-import "fyne.io/fyne/v2"
+import "djpken/go-fyne"
 
 const tapYOffset = 0 // no finger compensation on desktop (simulation)
 

@@ -1,6 +1,6 @@
 package layout
 
-import "fyne.io/fyne/v2"
+import "djpken/go-fyne"
 
 // SpacerObject is any object that can be used to space out child objects
 type SpacerObject interface {

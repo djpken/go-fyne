@@ -4,11 +4,11 @@ import (
 	"unicode"
 	"unicode/utf8"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/lang"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/lang"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 func createInformationDialog(title, message string, icon fyne.Resource, parent fyne.Window) Dialog {

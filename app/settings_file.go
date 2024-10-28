@@ -7,7 +7,7 @@ import (
 	"io"
 	"os"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 func (s *settings) load() {

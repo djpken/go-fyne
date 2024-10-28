@@ -3,11 +3,11 @@ package painter_test
 import (
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/internal/painter"
-	"fyne.io/fyne/v2/internal/painter/software"
-	"fyne.io/fyne/v2/test"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/internal/painter"
+	"djpken/go-fyne/internal/painter/software"
+	"djpken/go-fyne/test"
 	"github.com/stretchr/testify/assert"
 )
 

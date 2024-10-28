@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 type window struct {

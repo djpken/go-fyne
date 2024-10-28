@@ -3,10 +3,10 @@ package tutorials
 import (
 	"fmt"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/data/binding"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/data/binding"
+	"djpken/go-fyne/widget"
 )
 
 func bindingScreen(_ fyne.Window) fyne.CanvasObject {

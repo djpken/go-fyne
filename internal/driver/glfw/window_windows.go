@@ -5,9 +5,9 @@ import (
 	"syscall"
 	"unsafe"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/driver"
-	"fyne.io/fyne/v2/internal/scale"
+	"djpken/go-fyne"
+	"djpken/go-fyne/driver"
+	"djpken/go-fyne/internal/scale"
 
 	"golang.org/x/sys/windows/registry"
 )

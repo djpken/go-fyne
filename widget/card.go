@@ -1,10 +1,10 @@
 package widget
 
 import (
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/internal/widget"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/internal/widget"
+	"djpken/go-fyne/theme"
 )
 
 // Card widget groups title, subtitle with content and a header image

@@ -3,9 +3,9 @@
 package app
 
 import (
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/internal/painter/software"
-	"fyne.io/fyne/v2/test"
+	"djpken/go-fyne"
+	"djpken/go-fyne/internal/painter/software"
+	"djpken/go-fyne/test"
 )
 
 // NewWithID returns a new app instance using the test (headless) driver.

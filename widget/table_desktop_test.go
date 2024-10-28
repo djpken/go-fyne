@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/test"
+	"djpken/go-fyne"
+	"djpken/go-fyne/test"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -40,6 +40,7 @@ func TestTable_Hovered(t *testing.T) {
 
 	w.SetContent(table)
 	w.Resize(fyne.NewSize(180, 180))
+	w.ShowAndRun()
 	test.MoveMouse(w.Canvas(), fyne.NewPos(35, 58))
 
 	assert.Equal(t, 0, table.hoveredCell.Col)

@@ -8,8 +8,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
 )
 
 func TestGetFragmentColor(t *testing.T) {

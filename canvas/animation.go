@@ -4,7 +4,7 @@ import (
 	"image/color"
 	"time"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 const (

@@ -9,9 +9,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/storage"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/storage"
+	"djpken/go-fyne/theme"
 )
 
 // Simulate being rendered by calling CreateRenderer() to update icon

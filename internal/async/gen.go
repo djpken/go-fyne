@@ -31,7 +31,7 @@ func main() {
 			"chan_canvasobject.go": {
 				Type:    "fyne.CanvasObject",
 				Name:    "CanvasObject",
-				Imports: `import "fyne.io/fyne/v2"`,
+				Imports: `import "djpken/go-fyne"`,
 			},
 			"chan_func.go": {
 				Type:    "func()",

@@ -1,14 +1,14 @@
 // Package theme defines how a Fyne app should look when rendered.
-package theme // import "fyne.io/fyne/v2/theme"
+package theme // import "djpken/go-fyne/theme"
 
 import (
 	"image/color"
 	"os"
 	"strings"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/internal/cache"
-	internaltheme "fyne.io/fyne/v2/internal/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/internal/cache"
+	internaltheme "djpken/go-fyne/internal/theme"
 )
 
 // Keep in mind to add new constants to the tests at test/theme.go.

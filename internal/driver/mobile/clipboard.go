@@ -1,7 +1,7 @@
 package mobile
 
 import (
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 // Declare conformity with Clipboard interface

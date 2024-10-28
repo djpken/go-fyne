@@ -7,11 +7,11 @@ import (
 	"image/draw"
 	"math"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/internal/cache"
-	paint "fyne.io/fyne/v2/internal/painter"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/internal/cache"
+	paint "djpken/go-fyne/internal/painter"
+	"djpken/go-fyne/theme"
 )
 
 const floatEqualityThreshold = 1e-9

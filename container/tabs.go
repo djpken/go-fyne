@@ -3,13 +3,13 @@ package container
 import (
 	"sync"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/driver/desktop"
-	"fyne.io/fyne/v2/internal"
-	"fyne.io/fyne/v2/internal/build"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/driver/desktop"
+	"djpken/go-fyne/internal"
+	"djpken/go-fyne/internal/build"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 // TabItem represents a single view in a tab view.

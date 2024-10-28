@@ -6,7 +6,7 @@ import (
 	"regexp"
 	"syscall/js"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 var isMobile = regexp.MustCompile("Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile")

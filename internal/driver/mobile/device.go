@@ -1,10 +1,10 @@
 package mobile
 
 import (
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/driver/mobile"
-	"fyne.io/fyne/v2/internal/driver/mobile/event/size"
-	"fyne.io/fyne/v2/lang"
+	"djpken/go-fyne"
+	"djpken/go-fyne/driver/mobile"
+	"djpken/go-fyne/internal/driver/mobile/event/size"
+	"djpken/go-fyne/lang"
 )
 
 type device struct {

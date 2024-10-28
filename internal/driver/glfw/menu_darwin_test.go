@@ -10,8 +10,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/driver/desktop"
+	"djpken/go-fyne"
+	"djpken/go-fyne/driver/desktop"
 )
 
 func TestDarwinMenu(t *testing.T) {

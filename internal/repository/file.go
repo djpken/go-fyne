@@ -7,9 +7,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/storage"
-	"fyne.io/fyne/v2/storage/repository"
+	"djpken/go-fyne"
+	"djpken/go-fyne/storage"
+	"djpken/go-fyne/storage/repository"
 )
 
 // fileSchemePrefix is used for when we need a hard-coded version of "file://"

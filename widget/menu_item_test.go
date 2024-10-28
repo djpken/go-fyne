@@ -5,9 +5,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/internal/cache"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/internal/cache"
+	"djpken/go-fyne/theme"
 )
 
 func TestMenuItem_Disabled(t *testing.T) {

@@ -1,12 +1,12 @@
 package container
 
 import (
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	intWidget "fyne.io/fyne/v2/internal/widget"
-	"fyne.io/fyne/v2/layout"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	intWidget "djpken/go-fyne/internal/widget"
+	"djpken/go-fyne/layout"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 var _ fyne.Widget = (*InnerWindow)(nil)

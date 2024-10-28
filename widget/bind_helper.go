@@ -4,7 +4,7 @@ import (
 	"sync"
 	"sync/atomic"
 
-	"fyne.io/fyne/v2/data/binding"
+	"djpken/go-fyne/data/binding"
 )
 
 // basicBinder stores a DataItem and a function to be called when it changes.

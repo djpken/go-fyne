@@ -19,7 +19,7 @@ import (
 	"strings"
 	"unsafe"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 func (a *fyneApp) SendNotification(n *fyne.Notification) {

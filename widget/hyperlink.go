@@ -4,11 +4,11 @@ import (
 	"image/color"
 	"net/url"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/driver/desktop"
-	"fyne.io/fyne/v2/internal/widget"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/driver/desktop"
+	"djpken/go-fyne/internal/widget"
+	"djpken/go-fyne/theme"
 )
 
 var _ fyne.Focusable = (*Hyperlink)(nil)

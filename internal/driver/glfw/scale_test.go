@@ -6,8 +6,8 @@ import (
 	"os"
 	"testing"
 
-	"fyne.io/fyne/v2"
-	_ "fyne.io/fyne/v2/test"
+	"djpken/go-fyne"
+	_ "djpken/go-fyne/test"
 
 	"github.com/stretchr/testify/assert"
 )

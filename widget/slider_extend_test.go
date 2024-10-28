@@ -5,8 +5,8 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/internal/cache"
+	"djpken/go-fyne"
+	"djpken/go-fyne/internal/cache"
 )
 
 type extendedSlider struct {

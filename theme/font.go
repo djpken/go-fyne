@@ -3,7 +3,7 @@ package theme
 import (
 	"image/color"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 // DefaultEmojiFont returns the font resource for the built-in emoji font.

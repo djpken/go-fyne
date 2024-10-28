@@ -3,7 +3,7 @@ package fyne_test
 import (
 	"testing"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 	"github.com/stretchr/testify/assert"
 )
 

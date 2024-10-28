@@ -17,7 +17,7 @@ import (
 	"os"
 	"strconv"
 
-	"fyne.io/fyne/v2/cmd/fyne/internal/mobile/binres"
+	"djpken/go-fyne/cmd/fyne/internal/mobile/binres"
 )
 
 const tmpl = `// Copyright 2016 The Go Authors.  All rights reserved.

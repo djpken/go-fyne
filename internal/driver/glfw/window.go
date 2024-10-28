@@ -8,16 +8,16 @@ import (
 	"runtime"
 	"time"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/driver/desktop"
-	"fyne.io/fyne/v2/internal/app"
-	"fyne.io/fyne/v2/internal/build"
-	"fyne.io/fyne/v2/internal/cache"
-	"fyne.io/fyne/v2/internal/driver"
-	"fyne.io/fyne/v2/internal/driver/common"
-	"fyne.io/fyne/v2/internal/scale"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/driver/desktop"
+	"djpken/go-fyne/internal/app"
+	"djpken/go-fyne/internal/build"
+	"djpken/go-fyne/internal/cache"
+	"djpken/go-fyne/internal/driver"
+	"djpken/go-fyne/internal/driver/common"
+	"djpken/go-fyne/internal/scale"
 )
 
 const (

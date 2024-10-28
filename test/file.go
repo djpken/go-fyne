@@ -7,8 +7,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/storage"
+	"djpken/go-fyne"
+	"djpken/go-fyne/storage"
 )
 
 var errUnsupportedURLProtocol = errors.New("unsupported URL protocol")

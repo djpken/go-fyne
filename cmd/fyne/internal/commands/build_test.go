@@ -13,7 +13,7 @@ func Test_BuildWasmVersion(t *testing.T) {
 		{
 			expectedValue: expectedValue{args: []string{"mod", "edit", "-json"}},
 			mockReturn: mockReturn{
-				ret: []byte("{ \"Module\": { \"Path\": \"fyne.io/fyne/v2\"} }"),
+				ret: []byte("{ \"Module\": { \"Path\": \"djpken/go-fyne\"} }"),
 			},
 		},
 		{
@@ -39,7 +39,7 @@ func Test_BuildWasmReleaseVersion(t *testing.T) {
 		{
 			expectedValue: expectedValue{args: []string{"mod", "edit", "-json"}},
 			mockReturn: mockReturn{
-				ret: []byte("{ \"Module\": { \"Path\": \"fyne.io/fyne/v2\"} }"),
+				ret: []byte("{ \"Module\": { \"Path\": \"djpken/go-fyne\"} }"),
 			},
 		},
 		{
@@ -69,7 +69,7 @@ func Test_BuildLinuxReleaseVersion(t *testing.T) {
 		{
 			expectedValue: expectedValue{args: []string{"mod", "edit", "-json"}},
 			mockReturn: mockReturn{
-				ret: []byte("{ \"Module\": { \"Path\": \"fyne.io/fyne/v2\"} }"),
+				ret: []byte("{ \"Module\": { \"Path\": \"djpken/go-fyne\"} }"),
 			},
 		},
 		{
@@ -99,9 +99,9 @@ type jsonTest struct {
 
 func Test_FyneGoMod(t *testing.T) {
 	jsonTests := []jsonTest{
-		{false, []byte(`{"Module": {"Path": "github.com/fyne-io/calculator"},"Go": "1.14",	"Require": [ { "Path": "fyne.io/fyne/v2","Version": "v2.1.4"} ] }`)},
-		{true, []byte(`{ "Module": {"Path": "fyne.io/fyne/v2"},"Require": [{ "Path": "test","Version": "v2.1.4"} ] }`)},
-		{true, []byte(`{"Module": {"Path": "github.com/fyne-io/calculator"},"Go": "1.14",	"Require": [ { "Path": "fyne.io/fyne/v2","Version": "v2.2.0"} ] }`)},
+		{false, []byte(`{"Module": {"Path": "github.com/fyne-io/calculator"},"Go": "1.14",	"Require": [ { "Path": "djpken/go-fyne","Version": "v2.1.4"} ] }`)},
+		{true, []byte(`{ "Module": {"Path": "djpken/go-fyne"},"Require": [{ "Path": "test","Version": "v2.1.4"} ] }`)},
+		{true, []byte(`{"Module": {"Path": "github.com/fyne-io/calculator"},"Go": "1.14",	"Require": [ { "Path": "djpken/go-fyne","Version": "v2.2.0"} ] }`)},
 	}
 
 	for _, j := range jsonTests {

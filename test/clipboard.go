@@ -1,6 +1,6 @@
 package test
 
-import "fyne.io/fyne/v2"
+import "djpken/go-fyne"
 
 type clipboard struct {
 	content string

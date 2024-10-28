@@ -1,7 +1,7 @@
 package tutorials
 
 import (
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 // Tutorial defines the data structure for a tutorial

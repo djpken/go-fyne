@@ -1,7 +1,7 @@
 package app
 
 import "C"
-import "fyne.io/fyne/v2/internal/driver/mobile/event/key"
+import "djpken/go-fyne/internal/driver/mobile/event/key"
 
 // KeyboardType represents the type of a keyboard
 type KeyboardType int32

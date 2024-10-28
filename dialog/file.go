@@ -9,13 +9,13 @@ import (
 	"strings"
 	"sync"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/lang"
-	"fyne.io/fyne/v2/storage"
-	"fyne.io/fyne/v2/storage/repository"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/lang"
+	"djpken/go-fyne/storage"
+	"djpken/go-fyne/storage/repository"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 // ViewLayout can be passed to SetView() to set the view of

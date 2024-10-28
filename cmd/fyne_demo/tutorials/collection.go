@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strconv"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 // collectionScreen loads a tab panel for collection widgets

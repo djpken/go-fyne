@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"fyne.io/fyne/v2/storage"
+	"djpken/go-fyne/storage"
 )
 
 func TestBoolToString(t *testing.T) {

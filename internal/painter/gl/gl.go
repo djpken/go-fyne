@@ -6,8 +6,8 @@ import (
 	"log"
 	"runtime"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/internal/build"
+	"djpken/go-fyne"
+	"djpken/go-fyne/internal/build"
 )
 
 const floatSize = 4

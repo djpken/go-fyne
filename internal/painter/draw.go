@@ -3,8 +3,8 @@ package painter
 import (
 	"image"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
 
 	"github.com/srwiley/rasterx"
 	"golang.org/x/image/math/fixed"

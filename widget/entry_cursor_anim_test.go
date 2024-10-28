@@ -8,10 +8,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"fyne.io/fyne/v2/canvas"
-	col "fyne.io/fyne/v2/internal/color"
-	_ "fyne.io/fyne/v2/test"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne/canvas"
+	col "djpken/go-fyne/internal/color"
+	_ "djpken/go-fyne/test"
+	"djpken/go-fyne/theme"
 )
 
 func TestEntryCursorAnim(t *testing.T) {

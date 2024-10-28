@@ -3,7 +3,7 @@
 package glfw
 
 import (
-	"fyne.io/fyne/v2/driver"
+	"djpken/go-fyne/driver"
 )
 
 // assert we are implementing driver.NativeWindow

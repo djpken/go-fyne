@@ -3,7 +3,7 @@ package validation_test
 import (
 	"testing"
 
-	"fyne.io/fyne/v2/data/validation"
+	"djpken/go-fyne/data/validation"
 
 	"github.com/stretchr/testify/assert"
 )

@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"text/template"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 const itemBindTemplate = `
@@ -1096,7 +1096,7 @@ func main() {
 import (
 	"bytes"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 `)
 	convertFile, err := newFile("convert")
@@ -1108,7 +1108,7 @@ import (
 import (
 	"fmt"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 func internalFloatToInt(val float64) (int, error) {
@@ -1128,7 +1128,7 @@ func internalIntToFloat(val int) (float64, error) {
 import (
 	"sync/atomic"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 const keyTypeMismatchError = "A previous preference binding exists with different type for key: "
@@ -1143,7 +1143,7 @@ const keyTypeMismatchError = "A previous preference binding exists with differen
 import (
 	"bytes"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 `)
 
@@ -1156,7 +1156,7 @@ import (
 import (
 	"bytes"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 `)
 

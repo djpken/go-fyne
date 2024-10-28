@@ -5,11 +5,11 @@ import (
 	"image"
 	"math"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/internal/painter"
-	"fyne.io/fyne/v2/internal/scale"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/internal/painter"
+	"djpken/go-fyne/internal/scale"
+	"djpken/go-fyne/theme"
 
 	"golang.org/x/image/draw"
 )

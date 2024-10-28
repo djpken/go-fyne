@@ -3,11 +3,11 @@ package dialog
 import (
 	"image/color"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/container"
-	col "fyne.io/fyne/v2/internal/color"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/container"
+	col "djpken/go-fyne/internal/color"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 // newColorBasicPicker returns a component for selecting basic colors.

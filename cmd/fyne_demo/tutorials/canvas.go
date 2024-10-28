@@ -4,10 +4,10 @@ import (
 	"image/color"
 	"time"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/cmd/fyne_demo/data"
-	"fyne.io/fyne/v2/container"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/cmd/fyne_demo/data"
+	"djpken/go-fyne/container"
 )
 
 func rgbGradient(x, y, w, h int) color.Color {

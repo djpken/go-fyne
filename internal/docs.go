@@ -3,8 +3,8 @@ package internal
 import (
 	"errors"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/storage"
+	"djpken/go-fyne"
+	"djpken/go-fyne/storage"
 )
 
 var errNoAppID = errors.New("storage API requires a unique ID, use app.NewWithID()")

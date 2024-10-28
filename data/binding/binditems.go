@@ -6,7 +6,7 @@ package binding
 import (
 	"bytes"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 // Bool supports binding a bool value.

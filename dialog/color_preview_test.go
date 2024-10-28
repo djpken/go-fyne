@@ -4,9 +4,9 @@ import (
 	"image/color"
 	"testing"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/test"
-	"fyne.io/fyne/v2/theme"
+	"djpken/go-fyne"
+	"djpken/go-fyne/test"
+	"djpken/go-fyne/theme"
 )
 
 func Test_colorPreview_Color(t *testing.T) {

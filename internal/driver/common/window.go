@@ -3,7 +3,7 @@ package common
 import (
 	"sync"
 
-	"fyne.io/fyne/v2/internal/async"
+	"djpken/go-fyne/internal/async"
 )
 
 // Window defines common functionality for windows.

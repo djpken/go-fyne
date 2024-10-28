@@ -3,7 +3,7 @@ package widget
 import (
 	"sync"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 type pool interface {

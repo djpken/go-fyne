@@ -4,7 +4,7 @@ package storage
 import (
 	"errors"
 
-	"fyne.io/fyne/v2"
+	"djpken/go-fyne"
 )
 
 // OpenFileFromURI loads a file read stream from a resource identifier.

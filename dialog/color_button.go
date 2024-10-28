@@ -3,12 +3,12 @@ package dialog
 import (
 	"image/color"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/driver/desktop"
-	internalwidget "fyne.io/fyne/v2/internal/widget"
-	"fyne.io/fyne/v2/theme"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/driver/desktop"
+	internalwidget "djpken/go-fyne/internal/widget"
+	"djpken/go-fyne/theme"
+	"djpken/go-fyne/widget"
 )
 
 var _ fyne.Widget = (*colorButton)(nil)

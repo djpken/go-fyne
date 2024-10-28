@@ -5,11 +5,11 @@ import (
 	"image/color"
 	"strconv"
 
-	"fyne.io/fyne/v2"
-	"fyne.io/fyne/v2/canvas"
-	"fyne.io/fyne/v2/cmd/fyne_demo/data"
-	"fyne.io/fyne/v2/container"
-	"fyne.io/fyne/v2/widget"
+	"djpken/go-fyne"
+	"djpken/go-fyne/canvas"
+	"djpken/go-fyne/cmd/fyne_demo/data"
+	"djpken/go-fyne/container"
+	"djpken/go-fyne/widget"
 )
 
 // containerScreen loads a tab panel for containers
