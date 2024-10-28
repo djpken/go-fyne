@@ -93,7 +93,7 @@ func (t *StaticTable) CreateRenderer() fyne.WidgetRenderer {
 		t.themeCache = nil
 		t.propertyLock.Unlock()
 		render := cache.Renderer(t.cells)
-		render.(*headerTableCellsRenderer).scroll()
+		render.(*staticTableCellsRenderer).scroll()
 	}
 
 	r.Layout(t.Size())
@@ -133,7 +133,7 @@ func (t *StaticTable) RefreshItem(id TableCellID) {
 		return
 	}
 
-	r.(*headerTableCellsRenderer).refreshForID(id)
+	r.(*staticTableCellsRenderer).refreshForID(id)
 }
 
 // SetColumnWidth supports changing the width of the specified column. Columns normally take the width of the template
@@ -656,7 +656,7 @@ func (c *headerTableCells) CreateRenderer() fyne.WidgetRenderer {
 	th := c.Theme()
 	v := fyne.CurrentApp().Settings().ThemeVariant()
 
-	r := &headerTableCellsRenderer{cells: c, pool: &syncPool{}, headerPool: &syncPool{},
+	r := &staticTableCellsRenderer{cells: c, pool: &syncPool{}, headerPool: &syncPool{},
 		visible: make(map[TableCellID]fyne.CanvasObject), headers: make(map[TableCellID]fyne.CanvasObject),
 		headRowBG: canvas.NewRectangle(th.Color(theme.ColorNameHeaderBackground, v)), headColBG: canvas.NewRectangle(theme.Color(theme.ColorNameHeaderBackground)),
 		headRowStickyBG: canvas.NewRectangle(th.Color(theme.ColorNameHeaderBackground, v)), headColStickyBG: canvas.NewRectangle(theme.Color(theme.ColorNameHeaderBackground)),
@@ -672,9 +672,9 @@ func (c *headerTableCells) Resize(s fyne.Size) {
 }
 
 // Declare conformity with WidgetRenderer interface.
-var _ fyne.WidgetRenderer = (*headerTableCellsRenderer)(nil)
+var _ fyne.WidgetRenderer = (*staticTableCellsRenderer)(nil)
 
-type headerTableCellsRenderer struct {
+type staticTableCellsRenderer struct {
 	widget.BaseRenderer
 
 	init             bool
@@ -687,13 +687,13 @@ type headerTableCellsRenderer struct {
 	headColBG, headRowBG, headRowStickyBG, headColStickyBG *canvas.Rectangle
 }
 
-func (r *headerTableCellsRenderer) Layout(fyne.Size) {
+func (r *staticTableCellsRenderer) Layout(fyne.Size) {
 	r.cells.propertyLock.Lock()
 	r.moveIndicators()
 	r.cells.propertyLock.Unlock()
 }
 
-func (r *headerTableCellsRenderer) MinSize() fyne.Size {
+func (r *staticTableCellsRenderer) MinSize() fyne.Size {
 	r.cells.propertyLock.RLock()
 	defer r.cells.propertyLock.RUnlock()
 	rows, cols := 0, 0
@@ -740,7 +740,7 @@ func (r *headerTableCellsRenderer) MinSize() fyne.Size {
 	return fyne.NewSize(width+float32(cols-stickCols-1)*separatorSize, height+float32(rows-stickRows-1)*separatorSize)
 }
 
-func (r *headerTableCellsRenderer) Refresh() {
+func (r *staticTableCellsRenderer) Refresh() {
 	if r.init == true {
 		return
 	}
@@ -850,7 +850,7 @@ func (r *headerTableCellsRenderer) Refresh() {
 	r.moveIndicators()
 	r.init = true
 }
-func (r *headerTableCellsRenderer) scroll() {
+func (r *staticTableCellsRenderer) scroll() {
 	th := r.cells.t.Theme()
 	v := fyne.CurrentApp().Settings().ThemeVariant()
 	r.cells.propertyLock.Lock()
@@ -884,22 +884,19 @@ func (r *headerTableCellsRenderer) scroll() {
 	r.moveIndicators()
 }
 
-func (r *headerTableCellsRenderer) refreshForID(toDraw TableCellID) {
-	th := r.cells.t.Theme()
-	v := fyne.CurrentApp().Settings().ThemeVariant()
+func (r *staticTableCellsRenderer) refreshForID(toDraw TableCellID) {
 
 	r.cells.propertyLock.Lock()
-	separatorThickness := th.Size(theme.SizeNamePadding)
 	dataRows, dataCols := 0, 0
 	if f := r.cells.t.Length; f != nil {
 		dataRows, dataCols = r.cells.t.Length()
 	}
-	visibleColWidths, offX, minCol, maxCol := r.cells.t.visibleColumnWidths(r.cells.t.cellSize.Width, dataCols)
+	visibleColWidths, _, minCol, _ := r.cells.t.visibleColumnWidths(r.cells.t.cellSize.Width, dataCols)
 	if len(visibleColWidths) == 0 && dataCols > 0 { // we can't show anything until we have some dimensions
 		r.cells.propertyLock.Unlock()
 		return
 	}
-	visibleRowHeights, offY, minRow, maxRow := r.cells.t.visibleRowHeights(r.cells.t.cellSize.Height, dataRows)
+	visibleRowHeights, _, minRow, _ := r.cells.t.visibleRowHeights(r.cells.t.cellSize.Height, dataRows)
 	if len(visibleRowHeights) == 0 && dataRows > 0 { // we can't show anything until we have some dimensions
 		r.cells.propertyLock.Unlock()
 		return
@@ -928,83 +925,19 @@ func (r *headerTableCellsRenderer) refreshForID(toDraw TableCellID) {
 		startCol = stickCols
 	}
 
-	wasVisible := r.visible
-	r.visible = make(map[TableCellID]fyne.CanvasObject)
-	var cells []fyne.CanvasObject
-	displayCol := func(row, col int, rowHeight float32, cells *[]fyne.CanvasObject) {
-		id := TableCellID{row, col}
-		colWidth := visibleColWidths[col]
-		c, ok := wasVisible[id]
-		if !ok {
-			c = r.pool.Obtain()
-			if f := r.cells.t.CreateCell; f != nil && c == nil {
-				c = createItemAndApplyThemeScope(f, r.cells.t)
-			}
-			if c == nil {
-				return
-			}
+	id := TableCellID{toDraw.Row, toDraw.Col}
+	c, ok := r.visible[id]
+	if !ok {
+		c = r.pool.Obtain()
+		if f := r.cells.t.CreateCell; f != nil && c == nil {
+			c = createItemAndApplyThemeScope(f, r.cells.t)
 		}
-
-		c.Move(fyne.NewPos(cellXOffset, cellYOffset))
-		c.Resize(fyne.NewSize(colWidth, rowHeight))
-
-		r.visible[id] = c
-		*cells = append(*cells, c)
-		cellXOffset += colWidth + separatorThickness
-	}
-
-	displayRow := func(row int, cells *[]fyne.CanvasObject) {
-		rowHeight := visibleRowHeights[row]
-		cellXOffset = offX
-
-		for col := startCol; col < maxCol; col++ {
-			displayCol(row, col, rowHeight, cells)
+		if c == nil {
+			return
 		}
-		cellXOffset = r.cells.t.content.Offset.X
-		stick := r.cells.t.StickyColumnCount
-		if r.cells.t.ShowHeaderColumn {
-			cellXOffset += r.cells.t.headerSize.Width
-			stick--
-		}
-		cellYOffset += rowHeight + separatorThickness
 	}
 
-	cellYOffset = offY
-	for row := startRow; row < maxRow; row++ {
-		displayRow(row, &cells)
-	}
-
-	inline := r.refreshHeaders(visibleRowHeights, visibleColWidths, offX, offY, startRow, maxRow, startCol, maxCol,
-		separatorThickness, th, v)
-	cells = append(cells, inline...)
-
-	offX -= r.cells.t.content.Offset.X
-	cellYOffset = r.cells.t.stuckYOff
-	for row := 0; row < stickRows; row++ {
-		displayRow(row, &r.cells.t.top.Content.(*fyne.Container).Objects)
-	}
-
-	cellYOffset = offY - r.cells.t.content.Offset.Y
-	for row := startRow; row < maxRow; row++ {
-		cellXOffset = r.cells.t.stuckXOff
-		rowHeight := visibleRowHeights[row]
-		for col := 0; col < stickCols; col++ {
-			displayCol(row, col, rowHeight, &r.cells.t.left.Content.(*fyne.Container).Objects)
-		}
-		cellYOffset += rowHeight + separatorThickness
-	}
-
-	cellYOffset = r.cells.t.stuckYOff
-	for row := 0; row < stickRows; row++ {
-		cellXOffset = r.cells.t.stuckXOff
-		rowHeight := visibleRowHeights[row]
-		for col := 0; col < stickCols; col++ {
-			displayCol(row, col, rowHeight, &r.cells.t.corner.Content.(*fyne.Container).Objects)
-		}
-		cellYOffset += rowHeight + separatorThickness
-	}
-
-	for id, old := range wasVisible {
+	for id, old := range r.visible {
 		if _, ok := r.visible[id]; !ok {
 			r.pool.Release(old)
 		}
@@ -1012,7 +945,6 @@ func (r *headerTableCellsRenderer) refreshForID(toDraw TableCellID) {
 	visible := r.visible
 
 	r.cells.propertyLock.Unlock()
-	r.SetObjects(cells)
 
 	if updateCell != nil {
 		for id, cell := range visible {
@@ -1026,7 +958,7 @@ func (r *headerTableCellsRenderer) refreshForID(toDraw TableCellID) {
 	r.moveIndicators()
 }
 
-func (r *headerTableCellsRenderer) moveIndicators() {
+func (r *staticTableCellsRenderer) moveIndicators() {
 	rows, cols := 0, 0
 	if f := r.cells.t.Length; f != nil {
 		rows, cols = r.cells.t.Length()
@@ -1103,7 +1035,7 @@ func (r *headerTableCellsRenderer) moveIndicators() {
 	}
 }
 
-func (r *headerTableCellsRenderer) refreshHeaders(visibleRowHeights, visibleColWidths map[int]float32, offX, offY float32,
+func (r *staticTableCellsRenderer) refreshHeaders(visibleRowHeights, visibleColWidths map[int]float32, offX, offY float32,
 	startRow, maxRow, startCol, maxCol int, separatorThickness float32, th fyne.Theme, v fyne.ThemeVariant) []fyne.CanvasObject {
 	wasVisible := r.headers
 	r.headers = make(map[TableCellID]fyne.CanvasObject)
