@@ -1,6 +1,6 @@
 package mobile
 
-import "github.com/djpken/go-fyne"
+import "fyne.io/fyne/v2"
 
 func (d *driver) StartAnimation(a *fyne.Animation) {
 	d.animation.Start(a)

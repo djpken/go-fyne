@@ -3,14 +3,14 @@ package widget
 import (
 	"image/color"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/canvas"
-	"github.com/djpken/go-fyne/driver/desktop"
-	col "github.com/djpken/go-fyne/internal/color"
-	"github.com/djpken/go-fyne/internal/svg"
-	"github.com/djpken/go-fyne/internal/widget"
-	"github.com/djpken/go-fyne/layout"
-	"github.com/djpken/go-fyne/theme"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/driver/desktop"
+	col "fyne.io/fyne/v2/internal/color"
+	"fyne.io/fyne/v2/internal/svg"
+	"fyne.io/fyne/v2/internal/widget"
+	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/theme"
 )
 
 // ButtonAlign represents the horizontal alignment of a button.

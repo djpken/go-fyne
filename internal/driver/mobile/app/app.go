@@ -7,13 +7,13 @@
 package app
 
 import (
-	"github.com/djpken/go-fyne/internal/async"
-	"github.com/djpken/go-fyne/internal/driver/mobile/event/lifecycle"
-	"github.com/djpken/go-fyne/internal/driver/mobile/event/size"
-	"github.com/djpken/go-fyne/internal/driver/mobile/gl"
+	"fyne.io/fyne/v2/internal/async"
+	"fyne.io/fyne/v2/internal/driver/mobile/event/lifecycle"
+	"fyne.io/fyne/v2/internal/driver/mobile/event/size"
+	"fyne.io/fyne/v2/internal/driver/mobile/gl"
 
 	// Initialize necessary mobile functionality, such as logging.
-	_ "github.com/djpken/go-fyne/internal/driver/mobile/mobileinit"
+	_ "fyne.io/fyne/v2/internal/driver/mobile/mobileinit"
 )
 
 // Main is called by the main.main function to run the mobile application.

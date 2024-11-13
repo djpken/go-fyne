@@ -5,8 +5,8 @@ package glfw
 import (
 	"testing"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/container"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/container"
 
 	"github.com/stretchr/testify/assert"
 )

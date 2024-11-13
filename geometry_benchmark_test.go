@@ -3,7 +3,7 @@ package fyne_test
 import (
 	"testing"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 func BenchmarkPosition_Add(b *testing.B) {

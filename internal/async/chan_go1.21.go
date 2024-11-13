@@ -2,7 +2,7 @@
 
 package async
 
-import "github.com/djpken/go-fyne"
+import "fyne.io/fyne/v2"
 
 // UnboundedFuncChan is a channel with an unbounded buffer for caching
 // Func objects. A channel must be closed via Close method

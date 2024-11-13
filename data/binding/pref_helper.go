@@ -3,7 +3,7 @@ package binding
 import (
 	"sync"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 type preferenceItem interface {

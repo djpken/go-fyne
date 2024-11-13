@@ -3,8 +3,8 @@ package theme
 import (
 	"image/color"
 
-	"github.com/djpken/go-fyne"
-	internaltheme "github.com/djpken/go-fyne/internal/theme"
+	"fyne.io/fyne/v2"
+	internaltheme "fyne.io/fyne/v2/internal/theme"
 )
 
 // Keep in mind to add new constants to the tests at test/theme.go.

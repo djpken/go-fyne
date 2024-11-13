@@ -1,8 +1,8 @@
 package storage
 
 import (
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/storage/repository"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/storage/repository"
 )
 
 // NewFileURI creates a new URI from the given file path.

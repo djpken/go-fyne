@@ -1,6 +1,6 @@
 package commands
 
-import "github.com/djpken/go-fyne/internal/metadata"
+import "fyne.io/fyne/v2/internal/metadata"
 
 type appData struct {
 	icon, Name        string

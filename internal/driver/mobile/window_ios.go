@@ -3,7 +3,7 @@
 package mobile
 
 import (
-	fyneDriver "github.com/djpken/go-fyne/driver"
+	fyneDriver "fyne.io/fyne/v2/driver"
 )
 
 // Assert we are satisfying the driver.NativeWindow interface

@@ -8,13 +8,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/djpken/go-fyne"
-	fynecanvas "github.com/djpken/go-fyne/canvas"
-	"github.com/djpken/go-fyne/container"
-	"github.com/djpken/go-fyne/driver/mobile"
-	_ "github.com/djpken/go-fyne/test"
-	"github.com/djpken/go-fyne/theme"
-	"github.com/djpken/go-fyne/widget"
+	"fyne.io/fyne/v2"
+	fynecanvas "fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/driver/mobile"
+	_ "fyne.io/fyne/v2/test"
+	"fyne.io/fyne/v2/theme"
+	"fyne.io/fyne/v2/widget"
 
 	"github.com/stretchr/testify/assert"
 )

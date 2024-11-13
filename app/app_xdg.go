@@ -15,10 +15,10 @@ import (
 	portalSettings "github.com/rymdport/portal/settings"
 	"github.com/rymdport/portal/settings/appearance"
 
-	"github.com/djpken/go-fyne"
-	internalapp "github.com/djpken/go-fyne/internal/app"
-	"github.com/djpken/go-fyne/internal/build"
-	"github.com/djpken/go-fyne/theme"
+	"fyne.io/fyne/v2"
+	internalapp "fyne.io/fyne/v2/internal/app"
+	"fyne.io/fyne/v2/internal/build"
+	"fyne.io/fyne/v2/theme"
 )
 
 func (a *fyneApp) OpenURL(url *url.URL) error {

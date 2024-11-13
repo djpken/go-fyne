@@ -4,7 +4,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 // splitNonEmpty works exactly like strings.Split(), but only returns non-empty

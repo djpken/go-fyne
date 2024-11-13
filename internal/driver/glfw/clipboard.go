@@ -6,7 +6,7 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 
 	"github.com/go-gl/glfw/v3.3/glfw"
 )

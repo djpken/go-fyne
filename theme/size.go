@@ -1,6 +1,6 @@
 package theme
 
-import "github.com/djpken/go-fyne"
+import "fyne.io/fyne/v2"
 
 const (
 	// SizeNameCaptionText is the name of theme lookup for helper text size, normally smaller than regular text size.

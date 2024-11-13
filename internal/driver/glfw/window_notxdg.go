@@ -2,7 +2,7 @@
 
 package glfw
 
-import "github.com/djpken/go-fyne"
+import "fyne.io/fyne/v2"
 
 func (w *window) platformResize(canvasSize fyne.Size) {
 	d, ok := fyne.CurrentApp().Driver().(*gLDriver)

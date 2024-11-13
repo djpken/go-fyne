@@ -7,15 +7,15 @@ import (
 	"strings"
 	"testing"
 
-	intWidget "github.com/djpken/go-fyne/internal/widget"
+	intWidget "fyne.io/fyne/v2/internal/widget"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/container"
-	"github.com/djpken/go-fyne/storage"
-	"github.com/djpken/go-fyne/test"
-	"github.com/djpken/go-fyne/theme"
-	"github.com/djpken/go-fyne/widget"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/storage"
+	"fyne.io/fyne/v2/test"
+	"fyne.io/fyne/v2/theme"
+	"fyne.io/fyne/v2/widget"
 )
 
 // comparePaths compares if two file paths point to the same thing, and calls

@@ -5,7 +5,7 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/djpken/go-fyne/cmd/fyne/internal/templates"
+	"fyne.io/fyne/v2/cmd/fyne/internal/templates"
 )
 
 func (p *Packager) packageWasm() error {

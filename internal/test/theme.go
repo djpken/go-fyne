@@ -3,7 +3,7 @@ package test
 import (
 	"image/color"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 func DarkTheme(fallback fyne.Theme) fyne.Theme {

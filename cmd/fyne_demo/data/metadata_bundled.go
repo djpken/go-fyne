@@ -3,7 +3,7 @@
 
 package data
 
-import "github.com/djpken/go-fyne"
+import "fyne.io/fyne/v2"
 
 var resourceAuthors = &fyne.StaticResource{
 	StaticName: "AUTHORS",

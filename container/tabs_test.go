@@ -3,15 +3,15 @@ package container
 import (
 	"testing"
 
-	internalTest "github.com/djpken/go-fyne/internal/test"
+	internalTest "fyne.io/fyne/v2/internal/test"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/canvas"
-	"github.com/djpken/go-fyne/internal/cache"
-	"github.com/djpken/go-fyne/test"
-	"github.com/djpken/go-fyne/theme"
-	"github.com/djpken/go-fyne/widget"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/internal/cache"
+	"fyne.io/fyne/v2/test"
+	"fyne.io/fyne/v2/theme"
+	"fyne.io/fyne/v2/widget"
 )
 
 func TestTabButton_Icon_Change(t *testing.T) {

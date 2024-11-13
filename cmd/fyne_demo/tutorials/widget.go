@@ -6,16 +6,16 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/canvas"
-	"github.com/djpken/go-fyne/cmd/fyne_demo/data"
-	"github.com/djpken/go-fyne/container"
-	"github.com/djpken/go-fyne/data/validation"
-	"github.com/djpken/go-fyne/dialog"
-	"github.com/djpken/go-fyne/driver/mobile"
-	"github.com/djpken/go-fyne/layout"
-	"github.com/djpken/go-fyne/theme"
-	"github.com/djpken/go-fyne/widget"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/cmd/fyne_demo/data"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/data/validation"
+	"fyne.io/fyne/v2/dialog"
+	"fyne.io/fyne/v2/driver/mobile"
+	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/theme"
+	"fyne.io/fyne/v2/widget"
 )
 
 const (

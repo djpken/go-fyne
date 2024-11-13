@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/storage"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/storage"
 	"github.com/stretchr/testify/assert"
 )
 

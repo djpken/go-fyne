@@ -8,8 +8,8 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/cmd/fyne/internal/util"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/cmd/fyne/internal/util"
 
 	"golang.org/x/mod/semver"
 	"golang.org/x/sys/execabs"

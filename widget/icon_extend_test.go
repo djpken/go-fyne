@@ -3,9 +3,9 @@ package widget
 import (
 	"testing"
 
-	"github.com/djpken/go-fyne/canvas"
-	"github.com/djpken/go-fyne/internal/cache"
-	"github.com/djpken/go-fyne/theme"
+	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/internal/cache"
+	"fyne.io/fyne/v2/theme"
 	"github.com/stretchr/testify/assert"
 )
 

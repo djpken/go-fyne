@@ -3,7 +3,7 @@ package validation
 import (
 	"time"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 // NewTime creates a new validator that verifies times using time.Parse.

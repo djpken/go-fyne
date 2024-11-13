@@ -3,7 +3,7 @@ package mobile
 import (
 	"testing"
 
-	_ "github.com/djpken/go-fyne/test"
+	_ "fyne.io/fyne/v2/test"
 )
 
 func TestDevice_HideVirtualKeyboard_BeforeRun(t *testing.T) {

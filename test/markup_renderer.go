@@ -8,12 +8,12 @@ import (
 	"strings"
 	"unsafe"
 
-	"github.com/djpken/go-fyne"
-	fynecanvas "github.com/djpken/go-fyne/canvas"
-	col "github.com/djpken/go-fyne/internal/color"
-	intdriver "github.com/djpken/go-fyne/internal/driver"
-	"github.com/djpken/go-fyne/layout"
-	"github.com/djpken/go-fyne/theme"
+	"fyne.io/fyne/v2"
+	fynecanvas "fyne.io/fyne/v2/canvas"
+	col "fyne.io/fyne/v2/internal/color"
+	intdriver "fyne.io/fyne/v2/internal/driver"
+	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/theme"
 )
 
 type markupRenderer struct {

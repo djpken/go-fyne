@@ -3,9 +3,9 @@ package widget
 import (
 	"strings"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/canvas"
-	"github.com/djpken/go-fyne/internal/widget"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/internal/widget"
 )
 
 // CheckGroup widget has a list of text labels and checkbox icons next to each.

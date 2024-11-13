@@ -1,9 +1,9 @@
 package dialog
 
 import (
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/lang"
-	"github.com/djpken/go-fyne/widget"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/lang"
+	"fyne.io/fyne/v2/widget"
 )
 
 // EntryDialog is a variation of a dialog which prompts the user to enter some text.

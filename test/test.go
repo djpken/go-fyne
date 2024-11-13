@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/driver/desktop"
-	"github.com/djpken/go-fyne/internal/cache"
-	intdriver "github.com/djpken/go-fyne/internal/driver"
-	"github.com/djpken/go-fyne/internal/painter/software"
-	"github.com/djpken/go-fyne/internal/test"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/driver/desktop"
+	"fyne.io/fyne/v2/internal/cache"
+	intdriver "fyne.io/fyne/v2/internal/driver"
+	"fyne.io/fyne/v2/internal/painter/software"
+	"fyne.io/fyne/v2/internal/test"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

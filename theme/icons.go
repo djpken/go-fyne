@@ -1,8 +1,8 @@
 package theme
 
 import (
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/internal/svg"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/internal/svg"
 )
 
 const (

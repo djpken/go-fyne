@@ -4,7 +4,7 @@ import (
 	"github.com/jeandeaual/go-locale"
 	"golang.org/x/text/language"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 // SystemLocale returns the primary locale on the current system.

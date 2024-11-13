@@ -3,9 +3,9 @@ package storage_test
 import (
 	"testing"
 
-	"github.com/djpken/go-fyne/storage"
+	"fyne.io/fyne/v2/storage"
 
-	_ "github.com/djpken/go-fyne/test"
+	_ "fyne.io/fyne/v2/test"
 
 	"github.com/stretchr/testify/assert"
 )

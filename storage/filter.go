@@ -3,8 +3,8 @@ package storage
 import (
 	"strings"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/internal/repository/mime"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/internal/repository/mime"
 )
 
 // FileFilter is an interface that can be implemented to provide a filter to a file dialog.

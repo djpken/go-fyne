@@ -1,6 +1,6 @@
 package layout
 
-import "github.com/djpken/go-fyne"
+import "fyne.io/fyne/v2"
 
 // Declare conformity with Layout interface
 var _ fyne.Layout = (*centerLayout)(nil)

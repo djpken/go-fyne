@@ -3,9 +3,9 @@ package widget_test
 import (
 	"testing"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/internal/widget"
-	"github.com/djpken/go-fyne/test"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/internal/widget"
+	"fyne.io/fyne/v2/test"
 
 	"github.com/stretchr/testify/assert"
 )

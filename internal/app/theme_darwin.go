@@ -12,8 +12,8 @@ bool isDarkMode();
 */
 import "C"
 import (
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/theme"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/theme"
 )
 
 // DefaultVariant returns the systems default fyne.ThemeVariant.

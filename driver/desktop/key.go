@@ -1,7 +1,7 @@
 package desktop
 
 import (
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 const (

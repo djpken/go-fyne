@@ -5,10 +5,10 @@ package container_test
 import (
 	"testing"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/container"
-	"github.com/djpken/go-fyne/test"
-	"github.com/djpken/go-fyne/widget"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/test"
+	"fyne.io/fyne/v2/widget"
 )
 
 func TestAppTabs_ApplyTheme(t *testing.T) {

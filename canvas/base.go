@@ -5,13 +5,13 @@
 // non-interactive, by design. If additional functionality is required,
 // it's usually a sign that this type should be used as part of a custom
 // widget.
-package canvas // import "github.com/djpken/go-fyne/canvas"
+package canvas // import "fyne.io/fyne/v2/canvas"
 
 import (
 	"sync"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/internal/async"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/internal/async"
 )
 
 type baseObject struct {

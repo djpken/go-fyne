@@ -6,10 +6,10 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/djpken/go-fyne/canvas"
-	"github.com/djpken/go-fyne/storage"
-	"github.com/djpken/go-fyne/test"
-	"github.com/djpken/go-fyne/widget"
+	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/storage"
+	"fyne.io/fyne/v2/test"
+	"fyne.io/fyne/v2/widget"
 )
 
 func TestFileItem_Name(t *testing.T) {

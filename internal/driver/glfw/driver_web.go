@@ -5,7 +5,7 @@ package glfw
 import (
 	"time"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 const webDefaultDoubleTapDelay = 300 * time.Millisecond

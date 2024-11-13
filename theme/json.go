@@ -8,8 +8,8 @@ import (
 	"io"
 	"strings"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/storage"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/storage"
 )
 
 // FromJSON returns a Theme created from the given JSON metadata.

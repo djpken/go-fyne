@@ -3,8 +3,8 @@ package container
 import (
 	"testing"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/canvas"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/canvas"
 	"github.com/stretchr/testify/assert"
 )
 

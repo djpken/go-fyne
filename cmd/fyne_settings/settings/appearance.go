@@ -7,16 +7,16 @@ import (
 	"path/filepath"
 	"runtime"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/app"
-	"github.com/djpken/go-fyne/canvas"
-	"github.com/djpken/go-fyne/container"
-	internalapp "github.com/djpken/go-fyne/internal/app"
-	internaltheme "github.com/djpken/go-fyne/internal/theme"
-	intWidget "github.com/djpken/go-fyne/internal/widget"
-	"github.com/djpken/go-fyne/layout"
-	"github.com/djpken/go-fyne/theme"
-	"github.com/djpken/go-fyne/widget"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/canvas"
+	"fyne.io/fyne/v2/container"
+	internalapp "fyne.io/fyne/v2/internal/app"
+	internaltheme "fyne.io/fyne/v2/internal/theme"
+	intWidget "fyne.io/fyne/v2/internal/widget"
+	"fyne.io/fyne/v2/layout"
+	"fyne.io/fyne/v2/theme"
+	"fyne.io/fyne/v2/widget"
 )
 
 const (

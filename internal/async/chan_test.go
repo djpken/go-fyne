@@ -5,7 +5,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/djpken/go-fyne/internal/async"
+	"fyne.io/fyne/v2/internal/async"
 )
 
 func TestUnboundedChann(t *testing.T) {

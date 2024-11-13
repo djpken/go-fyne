@@ -4,7 +4,7 @@ import (
 	"image"
 	"image/color"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 type captureImage struct {

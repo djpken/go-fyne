@@ -2,9 +2,9 @@
 package main
 
 import (
-	"github.com/djpken/go-fyne/app"
-	"github.com/djpken/go-fyne/container"
-	"github.com/djpken/go-fyne/widget"
+	"fyne.io/fyne/v2/app"
+	"fyne.io/fyne/v2/container"
+	"fyne.io/fyne/v2/widget"
 )
 
 func main() {

@@ -3,7 +3,7 @@
 package mobile
 
 import (
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 func canListURI(fyne.URI) bool {

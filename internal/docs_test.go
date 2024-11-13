@@ -3,9 +3,9 @@ package internal
 import (
 	"testing"
 
-	intRepo "github.com/djpken/go-fyne/internal/repository"
-	"github.com/djpken/go-fyne/storage"
-	"github.com/djpken/go-fyne/storage/repository"
+	intRepo "fyne.io/fyne/v2/internal/repository"
+	"fyne.io/fyne/v2/storage"
+	"fyne.io/fyne/v2/storage/repository"
 
 	"github.com/stretchr/testify/assert"
 )

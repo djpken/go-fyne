@@ -27,11 +27,11 @@ import (
 	"log"
 	"runtime"
 
-	"github.com/djpken/go-fyne/internal/driver/mobile/event/key"
-	"github.com/djpken/go-fyne/internal/driver/mobile/event/lifecycle"
-	"github.com/djpken/go-fyne/internal/driver/mobile/event/paint"
-	"github.com/djpken/go-fyne/internal/driver/mobile/event/size"
-	"github.com/djpken/go-fyne/internal/driver/mobile/event/touch"
+	"fyne.io/fyne/v2/internal/driver/mobile/event/key"
+	"fyne.io/fyne/v2/internal/driver/mobile/event/lifecycle"
+	"fyne.io/fyne/v2/internal/driver/mobile/event/paint"
+	"fyne.io/fyne/v2/internal/driver/mobile/event/size"
+	"fyne.io/fyne/v2/internal/driver/mobile/event/touch"
 )
 
 var initThreadID uint64

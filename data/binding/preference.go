@@ -6,7 +6,7 @@ package binding
 import (
 	"sync/atomic"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 const keyTypeMismatchError = "A previous preference binding exists with different type for key: "

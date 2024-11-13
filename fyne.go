@@ -7,9 +7,9 @@
 //
 //	package main
 //
-//	import "github.com/djpken/go-fyne/app"
-//	import "github.com/djpken/go-fyne/container"
-//	import "github.com/djpken/go-fyne/widget"
+//	import "fyne.io/fyne/v2/app"
+//	import "fyne.io/fyne/v2/container"
+//	import "fyne.io/fyne/v2/widget"
 //
 //	func main() {
 //		a := app.New()
@@ -25,4 +25,4 @@
 //
 //		w.ShowAndRun()
 //	}
-package fyne // import "github.com/djpken/go-fyne"
+package fyne // import "fyne.io/fyne/v2"

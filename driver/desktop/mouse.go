@@ -1,6 +1,6 @@
 package desktop
 
-import "github.com/djpken/go-fyne"
+import "fyne.io/fyne/v2"
 
 // MouseButton represents a single button in a desktop MouseEvent
 type MouseButton int

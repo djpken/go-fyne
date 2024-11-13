@@ -5,9 +5,9 @@ package mobile
 import (
 	"io"
 
-	"github.com/djpken/go-fyne"
-	intRepo "github.com/djpken/go-fyne/internal/repository"
-	"github.com/djpken/go-fyne/storage/repository"
+	"fyne.io/fyne/v2"
+	intRepo "fyne.io/fyne/v2/internal/repository"
+	"fyne.io/fyne/v2/storage/repository"
 )
 
 func deleteURI(u fyne.URI) error {

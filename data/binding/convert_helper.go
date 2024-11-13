@@ -4,8 +4,8 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/storage"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/storage"
 )
 
 func stripFormatPrecision(in string) string {

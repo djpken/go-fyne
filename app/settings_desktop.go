@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 	"github.com/fsnotify/fsnotify"
 )
 

@@ -16,10 +16,10 @@ import (
 	"github.com/go-text/typesetting/shaping"
 	"golang.org/x/image/math/fixed"
 
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/internal/cache"
-	"github.com/djpken/go-fyne/lang"
-	"github.com/djpken/go-fyne/theme"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/internal/cache"
+	"fyne.io/fyne/v2/lang"
+	"fyne.io/fyne/v2/theme"
 )
 
 const (

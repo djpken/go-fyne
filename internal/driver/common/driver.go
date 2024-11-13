@@ -1,8 +1,8 @@
 package common
 
 import (
-	"github.com/djpken/go-fyne"
-	"github.com/djpken/go-fyne/internal/cache"
+	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/internal/cache"
 )
 
 // CanvasForObject returns the canvas for the specified object.

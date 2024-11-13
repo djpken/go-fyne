@@ -1,6 +1,6 @@
 package binding
 
-import "github.com/djpken/go-fyne"
+import "fyne.io/fyne/v2"
 
 func compareURI(v1, v2 fyne.URI) bool {
 	if v1 == nil && v1 == v2 {

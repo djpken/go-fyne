@@ -5,7 +5,7 @@ package theme
 import (
 	"image/color"
 
-	"github.com/djpken/go-fyne"
+	"fyne.io/fyne/v2"
 )
 
 var (

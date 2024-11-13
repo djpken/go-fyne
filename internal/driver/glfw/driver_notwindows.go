@@ -2,7 +2,7 @@
 
 package glfw
 
-import "github.com/djpken/go-fyne"
+import "fyne.io/fyne/v2"
 
 func logError(msg string, err error) {
 	fyne.LogError(msg, err)
