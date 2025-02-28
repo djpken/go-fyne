@@ -301,7 +301,7 @@ func NewDatePicker(when time.Time, weekStart time.Weekday, fn func(time.Time, bo
 
 		updateGrid(grid, when, weekStart, updateWhen, dtp.updateSelects, dtp.strings)
 	})
-	monthSelect.Selected = when.Month().String()
+	monthSelect.Selected = dtp.strings.months[when.Month()-1]
 
 	years := []string{}
 	// inverted years, most recent on top for easy selection
@@ -322,7 +322,7 @@ func NewDatePicker(when time.Time, weekStart time.Weekday, fn func(time.Time, bo
 
 	dtp.updateSelects = func(t time.Time) {
 		// directly assign instead of setter methods to avoid multiple updates
-		monthSelect.Selected = t.Month().String()
+		monthSelect.Selected = dtp.strings.months[t.Month()-1]
 		monthSelect.Refresh()
 		yearSelect.Selected = fmt.Sprintf("%d", t.Year())
 		yearSelect.Refresh()
@@ -385,7 +385,7 @@ func NewDateTimePicker(when time.Time, weekStart time.Weekday, fn func(time.Time
 
 	controlButtons := container.New(
 		layout.NewHBoxLayout(),
-		widget.NewButton("Now", func() {
+		widget.NewButton(lang.L("datepicker.now"), func() {
 			when = time.Now()
 
 			hourInput.SetText(when.Format("15"))
@@ -439,7 +439,7 @@ func NewDateTimePicker(when time.Time, weekStart time.Weekday, fn func(time.Time
 	}
 
 	timeForm := widget.NewForm(
-		widget.NewFormItem("Time",
+		widget.NewFormItem(lang.L("datepicker.time"),
 			container.NewHBox(hourInput, widget.NewLabel(":"), minuteInput),
 		),
 	)
