@@ -14,7 +14,7 @@ func TestAddTranslations(t *testing.T) {
 		"Test": "Match"
 	}`)))
 	if assert.NoError(t, err) {
-		setupLang("en")
+		SetupLang("en")
 		assert.Equal(t, "Match", L("Test"))
 	}
 
@@ -22,7 +22,7 @@ func TestAddTranslations(t *testing.T) {
 		"Test2": "Match2"
 	}`), "fr")
 	if assert.NoError(t, err) {
-		setupLang("fr")
+		SetupLang("fr")
 		assert.Equal(t, "Match2", L("Test2"))
 	}
 }
@@ -56,7 +56,7 @@ func TestLocalizePlural_Fallback(t *testing.T) {
 		}
 	}`))))
 
-	setupLang("en")
+	SetupLang("en")
 	assert.Equal(t, "Missing", N("Missing", 1))
 	assert.Equal(t, "Apple", N("Apple", 1))
 	assert.Equal(t, "Apples", N("Apple", 2))
@@ -67,7 +67,7 @@ func TestLocalizeKey_Fallback(t *testing.T) {
 		"appleID": "Apple Matched"
 	}`))))
 
-	setupLang("en")
+	SetupLang("en")
 	assert.Equal(t, "Apple", X("appleIDMissing", "Apple"))
 	assert.Equal(t, "Apple Matched", X("appleID", "Apple"))
 }
@@ -80,7 +80,7 @@ func TestLocalizePluralKey_Fallback(t *testing.T) {
 		}
 	}`))))
 
-	setupLang("en")
+	SetupLang("en")
 	assert.Equal(t, "Missing", XN("appleIDMissing", "Missing", 1))
 	assert.Equal(t, "Apple", XN("appleID", "Apple", 1))
 	assert.Equal(t, "Apples", XN("appleID", "Apple", 2))
@@ -88,6 +88,6 @@ func TestLocalizePluralKey_Fallback(t *testing.T) {
 
 func TestLoadBuiltInTranslations(t *testing.T) {
 	assert.NoError(t, AddTranslationsFS(translations, "translations"))
-	setupLang("en")
+	SetupLang("en")
 	assert.Equal(t, "OK", X("OK", "FAIL"))
 }

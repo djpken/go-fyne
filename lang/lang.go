@@ -193,8 +193,8 @@ func fallbackWithData(key, fallback string, data any) string {
 	return str.String()
 }
 
-// A utility for setting up languages - available to unit tests for overriding system
-func setupLang(lang string) {
+// SetupLang A utility for setting up languages - available to unit tests for overriding system
+func SetupLang(lang string) {
 	localizer = i18n.NewLocalizer(bundle, lang)
 }
 
@@ -207,5 +207,5 @@ func updateLocalizer() {
 		fyne.LogError("Failed to load user locales", err)
 		all = []string{"en"}
 	}
-	setupLang(closestSupportedLocale(all).LanguageString())
+	SetupLang(closestSupportedLocale(all).LanguageString())
 }
