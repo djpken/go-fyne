@@ -84,8 +84,9 @@ func makeTableTab(_ fyne.Window) fyne.CanvasObject {
 					Title:     "et porro tempora",
 					Completed: "true",
 				})
-				t.RefreshNew()
-
+				fyne.Do(func() {
+					t.Refresh()
+				})
 			}
 		}
 	}()
