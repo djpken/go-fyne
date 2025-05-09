@@ -2,14 +2,11 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 	"fyne.io/fyne/v2/data/binding"
 	"fyne.io/fyne/v2/widget"
 	"log"
-	"math/rand/v2"
-	"time"
 )
 
 func main() {
@@ -44,7 +41,7 @@ func makeTableTab(_ fyne.Window) fyne.CanvasObject {
 	for _, todo := range data {
 		bindings = append(bindings, binding.BindStruct(&todo))
 	}
-	t := widget.NewStaticTable(
+	t := widget.NewMenuTable(
 		func() (int, int) { return len(bindings), 4 },
 		func() fyne.CanvasObject {
 			return widget.NewLabel("wide content")
@@ -52,8 +49,6 @@ func makeTableTab(_ fyne.Window) fyne.CanvasObject {
 		func(i widget.TableCellID, o fyne.CanvasObject) {
 			var str any
 			switch i.Col {
-			case 0:
-				str, _ = bindings[i.Row].GetValue("UserID")
 			case 1:
 				str, _ = bindings[i.Row].GetValue("ID")
 			case 2:
@@ -61,35 +56,30 @@ func makeTableTab(_ fyne.Window) fyne.CanvasObject {
 			case 3:
 				str, _ = bindings[i.Row].GetValue("Completed")
 			}
-			o.(*widget.Label).SetText(str.(string))
-		})
-	t.SetColumnWidth(0, 102)
-	go func() {
-		ticker := time.NewTicker(1 * time.Second)
-		defer ticker.Stop()
-
-		for {
-			select {
-			case <-ticker.C:
-				i := rand.IntN(1000)
-				bindings = append(bindings, binding.BindStruct(&Todo{
-					UserID:    "1",
-					ID:        "4",
-					Title:     "et porro tempora",
-					Completed: "true",
-				}))
-				bindings[1] = binding.BindStruct(&Todo{
-					UserID:    "1",
-					ID:        fmt.Sprintf("%d", i),
-					Title:     "et porro tempora",
-					Completed: "true",
-				})
-				fyne.Do(func() {
-					t.Refresh()
-				})
+			label, ok := o.(*widget.Label)
+			if !ok {
+				return
 			}
+			label.SetText(str.(string))
+		})
+	t.UpdateMenuButton = func(i widget.TableCellID, o fyne.CanvasObject) {
+		button := o.(*widget.MenuButton)
+		if i.Row == 5 {
+			menu := &fyne.Menu{
+				Items: []*fyne.MenuItem{
+					fyne.NewMenuItem("5", nil),
+				},
+			}
+			button.SetMenu(menu)
+			return
 		}
-	}()
+		menu := &fyne.Menu{
+			Items: []*fyne.MenuItem{
+				fyne.NewMenuItem("edit", nil),
+			},
+		}
+		button.SetMenu(menu)
+	}
 
 	return t
 }

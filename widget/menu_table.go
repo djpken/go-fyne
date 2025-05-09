@@ -13,34 +13,36 @@ import (
 	"fyne.io/fyne/v2/theme"
 )
 
-var _ desktop.Cursorable = (*StaticTable)(nil)
-var _ fyne.Draggable = (*StaticTable)(nil)
-var _ fyne.Focusable = (*StaticTable)(nil)
-var _ desktop.Hoverable = (*StaticTable)(nil)
-var _ fyne.Tappable = (*StaticTable)(nil)
-var _ fyne.Widget = (*StaticTable)(nil)
+var _ desktop.Cursorable = (*MenuTable)(nil)
+var _ fyne.Draggable = (*MenuTable)(nil)
+var _ fyne.Focusable = (*MenuTable)(nil)
+var _ desktop.Hoverable = (*MenuTable)(nil)
+var _ fyne.Tappable = (*MenuTable)(nil)
+var _ fyne.Widget = (*MenuTable)(nil)
 
-// StaticTable widget is a grid of items that can be scrolled and a cell selected.
+// MenuTable widget is a grid of items that can be scrolled and a cell selected.
 // Its performance is provided by caching cell templates created with CreateCell and re-using them with UpdateCell.
 // The size of the content rows/columns is returned by the Length callback.
 //
 // Since: 1.4
-type StaticTable struct {
+type MenuTable struct {
 	BaseWidget
 
-	Length       func() (rows int, cols int)                      `json:"-"`
-	CreateCell   func() fyne.CanvasObject                         `json:"-"`
-	UpdateCell   func(id TableCellID, template fyne.CanvasObject) `json:"-"`
-	OnSelected   func(id TableCellID)                             `json:"-"`
-	OnUnselected func(id TableCellID)                             `json:"-"`
+	Length           func() (rows int, cols int)                      `json:"-"`
+	CreateCell       func() fyne.CanvasObject                         `json:"-"`
+	UpdateCell       func(id TableCellID, template fyne.CanvasObject) `json:"-"`
+	CreateMenuButton func() fyne.CanvasObject                         `json:"-"`
+	UpdateMenuButton func(id TableCellID, template fyne.CanvasObject) `json:"-"`
+	OnSelected       func(id TableCellID)                             `json:"-"`
+	OnUnselected     func(id TableCellID)                             `json:"-"`
 
-	// ShowHeaderRow specifies that a row should be added to the StaticTable with header content.headerSize = t.createHeader().MinSize()
+	// ShowHeaderRow specifies that a row should be added to the MenuTable with header content.headerSize = t.createHeader().MinSize()
 	// This will default to an A-Z style content, unless overridden with `CreateHeader` and `UpdateHeader` calls.
 	//
 	// Since: 2.4
 	ShowHeaderRow bool
 
-	// ShowHeaderColumn specifies that a column should be added to the StaticTable with header content.
+	// ShowHeaderColumn specifies that a column should be added to the MenuTable with header content.
 	// This will default to an 1-10 style numeric content, unless overridden with `CreateHeader` and `UpdateHeader` calls.
 	//
 	// Since: 2.4
@@ -70,7 +72,7 @@ type StaticTable struct {
 	// Since: 2.4
 	StickyColumnCount int
 
-	// HideSeparators hides the separator lines between the StaticTable cells
+	// HideSeparators hides the separator lines between the MenuTable cells
 	//
 	// Since: 2.5
 	HideSeparators bool
@@ -78,7 +80,7 @@ type StaticTable struct {
 	currentFocus              TableCellID
 	focused                   bool
 	selectedCell, hoveredCell *TableCellID
-	cells                     *staticTableCells
+	cells                     *menuTableCells
 	columnWidths, rowHeights  map[int]float32
 	moveCallback              func()
 	offset                    fyne.Position
@@ -86,42 +88,46 @@ type StaticTable struct {
 
 	cellSize, headerSize                                         fyne.Size
 	stuckXOff, stuckYOff, stuckWidth, stuckHeight, dragStartSize float32
-	top, left, corner, dividerLayer                              *staticClip
+	top, left, corner, dividerLayer                              *menuClip
 	hoverHeaderRow, hoverHeaderCol, dragCol, dragRow             int
 	dragStartPos                                                 fyne.Position
 }
 
-// NewStaticTable returns a new performant StaticTable widget defined by the passed functions.
+// NewMenuTable returns a new performant MenuTable widget defined by the passed functions.
 // The first returns the data size in rows and columns, second parameter is a function that returns cell
 // template objects that can be cached and the third is used to apply data at specified data location to the
 // passed template CanvasObject.
 //
 // Since: 1.4
-func NewStaticTable(length func() (rows int, cols int), create func() fyne.CanvasObject, update func(TableCellID, fyne.CanvasObject)) *StaticTable {
-	t := &StaticTable{Length: length, CreateCell: create, UpdateCell: update}
+func NewMenuTable(length func() (rows int, cols int), create func() fyne.CanvasObject, update func(TableCellID, fyne.CanvasObject)) *MenuTable {
+	t := &MenuTable{Length: length, CreateCell: create, UpdateCell: update}
+	t.CreateMenuButton = func() fyne.CanvasObject { return NewMenuButton("", nil) }
+	t.UpdateMenuButton = func(id TableCellID, template fyne.CanvasObject) {
+
+	}
 	t.ExtendBaseWidget(t)
 	return t
 }
 
-// NewStaticTableWithHeaders returns a new performant StaticTable widget defined by the passed functions including sticky headers.
+// NewMenuTableWithHeaders returns a new performant MenuTable widget defined by the passed functions including sticky headers.
 // The first returns the data size in rows and columns, second parameter is a function that returns cell
 // template objects that can be cached and the third is used to apply data at specified data location to the
 // passed template CanvasObject.
-// The row and column headers will stick to the leading and top edges of the StaticTable and contain "1-10" and "A-Z" formatted labels.
+// The row and column headers will stick to the leading and top edges of the MenuTable and contain "1-10" and "A-Z" formatted labels.
 //
 // Since: 2.4
-func NewStaticTableWithHeaders(length func() (rows int, cols int), create func() fyne.CanvasObject, update func(TableCellID, fyne.CanvasObject)) *StaticTable {
-	t := NewStaticTable(length, create, update)
+func NewMenuTableWithHeaders(length func() (rows int, cols int), create func() fyne.CanvasObject, update func(TableCellID, fyne.CanvasObject)) *MenuTable {
+	t := NewMenuTable(length, create, update)
 	t.ShowHeaderRow = true
 	t.ShowHeaderColumn = true
 
 	return t
 }
 
-// CreateRenderer returns a new renderer for the StaticTable.
+// CreateRenderer returns a new renderer for the MenuTable.
 //
 // Implements: fyne.Widget
-func (t *StaticTable) CreateRenderer() fyne.WidgetRenderer {
+func (t *MenuTable) CreateRenderer() fyne.WidgetRenderer {
 	t.ExtendBaseWidget(t)
 
 	t.headerSize = t.createHeader().MinSize()
@@ -136,16 +142,16 @@ func (t *StaticTable) CreateRenderer() fyne.WidgetRenderer {
 		}
 	}
 	t.cellSize = t.templateSize()
-	t.cells = newStaticTableCells(t)
+	t.cells = newMenuTableCells(t)
 	t.content = widget.NewScroll(t.cells)
-	t.top = newStaticClip(t, &fyne.Container{})
-	t.left = newStaticClip(t, &fyne.Container{})
-	t.corner = newStaticClip(t, &fyne.Container{})
-	t.dividerLayer = newStaticClip(t, &fyne.Container{})
+	t.top = newMenuClip(t, &fyne.Container{})
+	t.left = newMenuClip(t, &fyne.Container{})
+	t.corner = newMenuClip(t, &fyne.Container{})
+	t.dividerLayer = newMenuClip(t, &fyne.Container{})
 	t.dragCol = noCellMatch
 	t.dragRow = noCellMatch
 
-	r := &staticTableRenderer{t: t}
+	r := &menuTableRenderer{t: t}
 	r.SetObjects([]fyne.CanvasObject{t.top, t.left, t.corner, t.dividerLayer, t.content})
 	t.content.OnScrolled = func(pos fyne.Position) {
 		t.offset = pos
@@ -156,7 +162,7 @@ func (t *StaticTable) CreateRenderer() fyne.WidgetRenderer {
 	return r
 }
 
-func (t *StaticTable) Cursor() desktop.Cursor {
+func (t *MenuTable) Cursor() desktop.Cursor {
 	if t.hoverHeaderRow != noCellMatch {
 		return desktop.VResizeCursor
 	} else if t.hoverHeaderCol != noCellMatch {
@@ -166,7 +172,7 @@ func (t *StaticTable) Cursor() desktop.Cursor {
 	return desktop.DefaultCursor
 }
 
-func (t *StaticTable) Dragged(e *fyne.DragEvent) {
+func (t *MenuTable) Dragged(e *fyne.DragEvent) {
 	min := t.cellSize
 	col := t.dragCol
 	row := t.dragRow
@@ -189,52 +195,52 @@ func (t *StaticTable) Dragged(e *fyne.DragEvent) {
 	}
 }
 
-func (t *StaticTable) DragEnd() {
+func (t *MenuTable) DragEnd() {
 	t.dragCol = noCellMatch
 	t.dragRow = noCellMatch
 }
 
-// FocusGained is called after this StaticTable has gained focus.
+// FocusGained is called after this MenuTable has gained focus.
 //
 // Implements: fyne.Focusable
-func (t *StaticTable) FocusGained() {
+func (t *MenuTable) FocusGained() {
 	t.focused = true
 	t.RefreshItem(t.currentFocus)
 }
 
-// FocusLost is called after this StaticTable has lost focus.
+// FocusLost is called after this MenuTable has lost focus.
 //
 // Implements: fyne.Focusable
-func (t *StaticTable) FocusLost() {
+func (t *MenuTable) FocusLost() {
 	t.focused = false
 	t.Refresh() // Item(t.currentFocus)
 }
 
-func (t *StaticTable) MouseIn(ev *desktop.MouseEvent) {
+func (t *MenuTable) MouseIn(ev *desktop.MouseEvent) {
 	t.hoverAt(ev.Position)
 }
 
 // MouseDown response to desktop mouse event
-func (t *StaticTable) MouseDown(e *desktop.MouseEvent) {
+func (t *MenuTable) MouseDown(e *desktop.MouseEvent) {
 	t.tapped(e.Position)
 }
 
-func (t *StaticTable) MouseMoved(ev *desktop.MouseEvent) {
+func (t *MenuTable) MouseMoved(ev *desktop.MouseEvent) {
 	t.hoverAt(ev.Position)
 }
 
-func (t *StaticTable) MouseOut() {
+func (t *MenuTable) MouseOut() {
 	t.hoverOut()
 }
 
 // MouseUp response to desktop mouse event
-func (t *StaticTable) MouseUp(*desktop.MouseEvent) {
+func (t *MenuTable) MouseUp(*desktop.MouseEvent) {
 }
 
 // RefreshItem refreshes a single item, specified by the item ID passed in.
 //
 // Since: 2.4
-func (t *StaticTable) RefreshItem(id TableCellID) {
+func (t *MenuTable) RefreshItem(id TableCellID) {
 	if t.cells == nil {
 		return
 	}
@@ -242,7 +248,7 @@ func (t *StaticTable) RefreshItem(id TableCellID) {
 }
 
 // Select will mark the specified cell as selected.
-func (t *StaticTable) Select(id TableCellID) {
+func (t *MenuTable) Select(id TableCellID) {
 	if t.Length == nil {
 		return
 	}
@@ -273,7 +279,7 @@ func (t *StaticTable) Select(id TableCellID) {
 // to the internal content width not including the divider size.
 //
 // Since: 1.4.1
-func (t *StaticTable) SetColumnWidth(id int, width float32) {
+func (t *MenuTable) SetColumnWidth(id int, width float32) {
 	if id < 0 {
 		if t.headerSize.Width == width {
 			return
@@ -297,7 +303,7 @@ func (t *StaticTable) SetColumnWidth(id int, width float32) {
 // to the internal content height not including the divider size.
 //
 // Since: 2.3
-func (t *StaticTable) SetRowHeight(id int, height float32) {
+func (t *MenuTable) SetRowHeight(id int, height float32) {
 	if id < 0 {
 		if t.headerSize.Height == height {
 			return
@@ -317,22 +323,22 @@ func (t *StaticTable) SetRowHeight(id int, height float32) {
 }
 
 // TouchDown response to mobile touch event
-func (t *StaticTable) TouchDown(e *mobile.TouchEvent) {
+func (t *MenuTable) TouchDown(e *mobile.TouchEvent) {
 	t.tapped(e.Position)
 }
 
 // TouchUp response to mobile touch event
-func (t *StaticTable) TouchUp(*mobile.TouchEvent) {
+func (t *MenuTable) TouchUp(*mobile.TouchEvent) {
 }
 
 // TouchCancel response to mobile touch event
-func (t *StaticTable) TouchCancel(*mobile.TouchEvent) {
+func (t *MenuTable) TouchCancel(*mobile.TouchEvent) {
 }
 
-// TypedKey is called if a key event happens while this StaticTable is focused.
+// TypedKey is called if a key event happens while this MenuTable is focused.
 //
 // Implements: fyne.Focusable
-func (t *StaticTable) TypedKey(event *fyne.KeyEvent) {
+func (t *MenuTable) TypedKey(event *fyne.KeyEvent) {
 	switch event.Name {
 	case fyne.KeySpace:
 		t.Select(t.currentFocus)
@@ -377,15 +383,15 @@ func (t *StaticTable) TypedKey(event *fyne.KeyEvent) {
 	}
 }
 
-// TypedRune is called if a text event happens while this StaticTable is focused.
+// TypedRune is called if a text event happens while this MenuTable is focused.
 //
 // Implements: fyne.Focusable
-func (t *StaticTable) TypedRune(_ rune) {
+func (t *MenuTable) TypedRune(_ rune) {
 	// intentionally left blank
 }
 
 // Unselect will mark the cell provided by id as unselected.
-func (t *StaticTable) Unselect(id TableCellID) {
+func (t *MenuTable) Unselect(id TableCellID) {
 	if t.selectedCell == nil || id != *t.selectedCell {
 		return
 	}
@@ -403,7 +409,7 @@ func (t *StaticTable) Unselect(id TableCellID) {
 // UnselectAll will mark all cells as unselected.
 //
 // Since: 2.1
-func (t *StaticTable) UnselectAll() {
+func (t *MenuTable) UnselectAll() {
 	if t.selectedCell == nil {
 		return
 	}
@@ -421,11 +427,11 @@ func (t *StaticTable) UnselectAll() {
 }
 
 // ScrollTo will scroll to the given cell without changing the selection.
-// Attempting to scroll beyond the limits of the StaticTable will scroll to
-// the edge of the StaticTable instead.
+// Attempting to scroll beyond the limits of the MenuTable will scroll to
+// the edge of the MenuTable instead.
 //
 // Since: 2.1
-func (t *StaticTable) ScrollTo(id TableCellID) {
+func (t *MenuTable) ScrollTo(id TableCellID) {
 	if t.Length == nil {
 		return
 	}
@@ -485,10 +491,10 @@ func (t *StaticTable) ScrollTo(id TableCellID) {
 	t.finishScroll()
 }
 
-// ScrollToBottom scrolls to the last row in the StaticTable
+// ScrollToBottom scrolls to the last row in the MenuTable
 //
 // Since: 2.1
-func (t *StaticTable) ScrollToBottom() {
+func (t *MenuTable) ScrollToBottom() {
 	if t.Length == nil || t.content == nil {
 		return
 	}
@@ -505,10 +511,10 @@ func (t *StaticTable) ScrollToBottom() {
 	t.finishScroll()
 }
 
-// ScrollToLeading scrolls horizontally to the leading edge of the StaticTable
+// ScrollToLeading scrolls horizontally to the leading edge of the MenuTable
 //
 // Since: 2.1
-func (t *StaticTable) ScrollToLeading() {
+func (t *MenuTable) ScrollToLeading() {
 	if t.content == nil {
 		return
 	}
@@ -518,10 +524,10 @@ func (t *StaticTable) ScrollToLeading() {
 	t.finishScroll()
 }
 
-// ScrollToOffset scrolls the StaticTable to a specific position
+// ScrollToOffset scrolls the MenuTable to a specific position
 //
 // Since: 2.6
-func (t *StaticTable) ScrollToOffset(off fyne.Position) {
+func (t *MenuTable) ScrollToOffset(off fyne.Position) {
 	if t.content == nil {
 		return
 	}
@@ -531,10 +537,10 @@ func (t *StaticTable) ScrollToOffset(off fyne.Position) {
 	t.finishScroll()
 }
 
-// ScrollToTop scrolls to the first row in the StaticTable
+// ScrollToTop scrolls to the first row in the MenuTable
 //
 // Since: 2.1
-func (t *StaticTable) ScrollToTop() {
+func (t *MenuTable) ScrollToTop() {
 	if t.content == nil {
 		return
 	}
@@ -544,10 +550,10 @@ func (t *StaticTable) ScrollToTop() {
 	t.finishScroll()
 }
 
-// ScrollToTrailing scrolls horizontally to the trailing edge of the StaticTable
+// ScrollToTrailing scrolls horizontally to the trailing edge of the MenuTable
 //
 // Since: 2.1
-func (t *StaticTable) ScrollToTrailing() {
+func (t *MenuTable) ScrollToTrailing() {
 	if t.content == nil || t.Length == nil {
 		return
 	}
@@ -564,7 +570,7 @@ func (t *StaticTable) ScrollToTrailing() {
 	t.finishScroll()
 }
 
-func (t *StaticTable) Tapped(e *fyne.PointEvent) {
+func (t *MenuTable) Tapped(e *fyne.PointEvent) {
 	if e.Position.X < 0 || e.Position.X >= t.Size().Width || e.Position.Y < 0 || e.Position.Y >= t.Size().Height {
 		t.selectedCell = nil
 		t.Refresh()
@@ -594,7 +600,7 @@ func (t *StaticTable) Tapped(e *fyne.PointEvent) {
 // columnAt returns a positive integer (or 0) for the column that is found at the `pos` X position.
 // If the position is between cells the method will return a negative integer representing the next column,
 // i.e. -1 means the gap between 0 and 1.
-func (t *StaticTable) columnAt(pos fyne.Position) int {
+func (t *MenuTable) columnAt(pos fyne.Position) int {
 	dataCols := 0
 	if f := t.Length; f != nil {
 		_, dataCols = t.Length()
@@ -623,7 +629,7 @@ func (t *StaticTable) columnAt(pos fyne.Position) int {
 	return noCellMatch
 }
 
-func (t *StaticTable) createHeader() fyne.CanvasObject {
+func (t *MenuTable) createHeader() fyne.CanvasObject {
 	if f := t.CreateHeader; f != nil {
 		return f()
 	}
@@ -634,7 +640,7 @@ func (t *StaticTable) createHeader() fyne.CanvasObject {
 	return l
 }
 
-func (t *StaticTable) findX(col int) (cellX float32, cellWidth float32) {
+func (t *MenuTable) findX(col int) (cellX float32, cellWidth float32) {
 	cellSize := t.templateSize()
 	padding := t.Theme().Size(theme.SizeNamePadding)
 	for i := 0; i <= col; i++ {
@@ -651,7 +657,7 @@ func (t *StaticTable) findX(col int) (cellX float32, cellWidth float32) {
 	return
 }
 
-func (t *StaticTable) findY(row int) (cellY float32, cellHeight float32) {
+func (t *MenuTable) findY(row int) (cellY float32, cellHeight float32) {
 	cellSize := t.templateSize()
 	padding := t.Theme().Size(theme.SizeNamePadding)
 	for i := 0; i <= row; i++ {
@@ -668,14 +674,14 @@ func (t *StaticTable) findY(row int) (cellY float32, cellHeight float32) {
 	return
 }
 
-func (t *StaticTable) finishScroll() {
+func (t *MenuTable) finishScroll() {
 	if t.moveCallback != nil {
 		t.moveCallback()
 	}
 	t.cells.Refresh()
 }
 
-func (t *StaticTable) hoverAt(pos fyne.Position) {
+func (t *MenuTable) hoverAt(pos fyne.Position) {
 	col := t.columnAt(pos)
 	row := t.rowAt(pos)
 	t.hoveredCell = &TableCellID{row, col}
@@ -714,7 +720,7 @@ func (t *StaticTable) hoverAt(pos fyne.Position) {
 	}
 }
 
-func (t *StaticTable) hoverOut() {
+func (t *MenuTable) hoverOut() {
 	t.hoveredCell = nil
 
 	if t.moveCallback != nil {
@@ -725,7 +731,7 @@ func (t *StaticTable) hoverOut() {
 // rowAt returns a positive integer (or 0) for the row that is found at the `pos` Y position.
 // If the position is between cells the method will return a negative integer representing the next row,
 // i.e. -1 means the gap between rows 0 and 1.
-func (t *StaticTable) rowAt(pos fyne.Position) int {
+func (t *MenuTable) rowAt(pos fyne.Position) int {
 	dataRows := 0
 	if f := t.Length; f != nil {
 		dataRows, _ = t.Length()
@@ -754,7 +760,7 @@ func (t *StaticTable) rowAt(pos fyne.Position) int {
 	return noCellMatch
 }
 
-func (t *StaticTable) tapped(pos fyne.Position) {
+func (t *MenuTable) tapped(pos fyne.Position) {
 	if t.dragCol == noCellMatch && t.dragRow == noCellMatch {
 		t.dragStartPos = pos
 		if t.hoverHeaderRow != noCellMatch {
@@ -777,7 +783,7 @@ func (t *StaticTable) tapped(pos fyne.Position) {
 	}
 }
 
-func (t *StaticTable) templateSize() fyne.Size {
+func (t *MenuTable) templateSize() fyne.Size {
 	if f := t.CreateCell; f != nil {
 		template := createItemAndApplyThemeScope(f, t) // don't use cache, we need new template
 		if !t.ShowHeaderRow && !t.ShowHeaderColumn {
@@ -786,11 +792,11 @@ func (t *StaticTable) templateSize() fyne.Size {
 		return template.MinSize().Max(t.createHeader().MinSize())
 	}
 
-	fyne.LogError("Missing CreateCell callback required for StaticTable", nil)
+	fyne.LogError("Missing CreateCell callback required for MenuTable", nil)
 	return fyne.Size{}
 }
 
-func (t *StaticTable) updateHeader(id TableCellID, o fyne.CanvasObject) {
+func (t *MenuTable) updateHeader(id TableCellID, o fyne.CanvasObject) {
 	if f := t.UpdateHeader; f != nil {
 		f(id, o)
 		return
@@ -812,7 +818,7 @@ func (t *StaticTable) updateHeader(id TableCellID, o fyne.CanvasObject) {
 	}
 }
 
-func (t *StaticTable) stickyColumnWidths(colWidth float32, cols int) (visible []float32) {
+func (t *MenuTable) stickyColumnWidths(colWidth float32, cols int) (visible []float32) {
 	if cols == 0 {
 		return []float32{}
 	}
@@ -843,7 +849,7 @@ func (t *StaticTable) stickyColumnWidths(colWidth float32, cols int) (visible []
 	return
 }
 
-func (t *StaticTable) visibleColumnWidths(colWidth float32, cols int) (visible map[int]float32, offX float32, minCol, maxCol int) {
+func (t *MenuTable) visibleColumnWidths(colWidth float32, cols int) (visible map[int]float32, offX float32, minCol, maxCol int) {
 	maxCol = cols
 	colOffset, headWidth := float32(0), float32(0)
 	isVisible := false
@@ -912,7 +918,7 @@ func (t *StaticTable) visibleColumnWidths(colWidth float32, cols int) (visible m
 	return
 }
 
-func (t *StaticTable) stickyRowHeights(rowHeight float32, rows int) (visible []float32) {
+func (t *MenuTable) stickyRowHeights(rowHeight float32, rows int) (visible []float32) {
 	if rows == 0 {
 		return []float32{}
 	}
@@ -943,7 +949,7 @@ func (t *StaticTable) stickyRowHeights(rowHeight float32, rows int) (visible []f
 	return
 }
 
-func (t *StaticTable) visibleRowHeights(rowHeight float32, rows int) (visible map[int]float32, offY float32, minRow, maxRow int) {
+func (t *MenuTable) visibleRowHeights(rowHeight float32, rows int) (visible map[int]float32, offY float32, minRow, maxRow int) {
 	maxRow = rows
 	rowOffset, headHeight := float32(0), float32(0)
 	isVisible := false
@@ -1013,14 +1019,14 @@ func (t *StaticTable) visibleRowHeights(rowHeight float32, rows int) (visible ma
 }
 
 // Declare conformity with WidgetRenderer interface.
-var _ fyne.WidgetRenderer = (*staticTableRenderer)(nil)
+var _ fyne.WidgetRenderer = (*menuTableRenderer)(nil)
 
-type staticTableRenderer struct {
+type menuTableRenderer struct {
 	widget.BaseRenderer
-	t *StaticTable
+	t *MenuTable
 }
 
-func (t *staticTableRenderer) Layout(s fyne.Size) {
+func (t *menuTableRenderer) Layout(s fyne.Size) {
 	th := t.t.Theme()
 
 	t.calculateHeaderSizes(th)
@@ -1049,7 +1055,7 @@ func (t *staticTableRenderer) Layout(s fyne.Size) {
 	}
 }
 
-func (t *staticTableRenderer) MinSize() fyne.Size {
+func (t *menuTableRenderer) MinSize() fyne.Size {
 	sep := t.t.Theme().Size(theme.SizeNamePadding)
 	min := t.t.content.MinSize().Max(t.t.cellSize)
 	if t.t.ShowHeaderRow {
@@ -1081,7 +1087,7 @@ func (t *staticTableRenderer) MinSize() fyne.Size {
 	return min
 }
 
-func (t *staticTableRenderer) Refresh() {
+func (t *menuTableRenderer) Refresh() {
 	th := t.t.Theme()
 	t.t.headerSize = t.t.createHeader().MinSize()
 	if t.t.columnWidths != nil {
@@ -1101,7 +1107,7 @@ func (t *staticTableRenderer) Refresh() {
 	t.t.cells.Refresh()
 }
 
-func (t *staticTableRenderer) calculateHeaderSizes(th fyne.Theme) {
+func (t *menuTableRenderer) calculateHeaderSizes(th fyne.Theme) {
 	t.t.stuckXOff = 0
 	t.t.stuckYOff = 0
 
@@ -1129,22 +1135,22 @@ func (t *staticTableRenderer) calculateHeaderSizes(th fyne.Theme) {
 }
 
 // Declare conformity with Widget interface.
-var _ fyne.Widget = (*staticTableCells)(nil)
+var _ fyne.Widget = (*menuTableCells)(nil)
 
-type staticTableCells struct {
+type menuTableCells struct {
 	BaseWidget
-	t *StaticTable
+	t *MenuTable
 
 	nextRefreshCellsID TableCellID
 }
 
-func newStaticTableCells(t *StaticTable) *staticTableCells {
-	c := &staticTableCells{t: t, nextRefreshCellsID: allTableCellsID}
+func newMenuTableCells(t *MenuTable) *menuTableCells {
+	c := &menuTableCells{t: t, nextRefreshCellsID: allTableCellsID}
 	c.ExtendBaseWidget(c)
 	return c
 }
 
-func (c *staticTableCells) CreateRenderer() fyne.WidgetRenderer {
+func (c *menuTableCells) CreateRenderer() fyne.WidgetRenderer {
 	th := c.Theme()
 	v := fyne.CurrentApp().Settings().ThemeVariant()
 	marker := canvas.NewRectangle(th.Color(theme.ColorNameSelection, v))
@@ -1152,7 +1158,7 @@ func (c *staticTableCells) CreateRenderer() fyne.WidgetRenderer {
 	hover := canvas.NewRectangle(th.Color(theme.ColorNameHover, v))
 	hover.CornerRadius = th.Size(theme.SizeNameSelectionRadius)
 
-	r := &staticTableCellsRenderer{cells: c,
+	r := &menuTableCellsRenderer{cells: c,
 		visible: make(map[TableCellID]fyne.CanvasObject), headers: make(map[TableCellID]fyne.CanvasObject),
 		headRowBG: canvas.NewRectangle(th.Color(theme.ColorNameHeaderBackground, v)), headColBG: canvas.NewRectangle(theme.Color(theme.ColorNameHeaderBackground)),
 		headRowStickyBG: canvas.NewRectangle(th.Color(theme.ColorNameHeaderBackground, v)), headColStickyBG: canvas.NewRectangle(theme.Color(theme.ColorNameHeaderBackground)),
@@ -1162,28 +1168,28 @@ func (c *staticTableCells) CreateRenderer() fyne.WidgetRenderer {
 	return r
 }
 
-func (c *staticTableCells) Resize(s fyne.Size) {
+func (c *menuTableCells) Resize(s fyne.Size) {
 	c.BaseWidget.Resize(s)
 	c.refreshForID(onlyNewTableCellsID) // trigger a redraw
 }
 
-func (c *staticTableCells) refreshForID(id TableCellID) {
+func (c *menuTableCells) refreshForID(id TableCellID) {
 	c.nextRefreshCellsID = id
 	c.BaseWidget.Refresh()
 }
 
-func (c *staticTableCells) Refresh() {
+func (c *menuTableCells) Refresh() {
 	c.nextRefreshCellsID = allTableCellsID
 	c.BaseWidget.Refresh()
 }
 
 // Declare conformity with WidgetRenderer interface.
-var _ fyne.WidgetRenderer = (*staticTableCellsRenderer)(nil)
+var _ fyne.WidgetRenderer = (*menuTableCellsRenderer)(nil)
 
-type staticTableCellsRenderer struct {
+type menuTableCellsRenderer struct {
 	widget.BaseRenderer
 
-	cells            *staticTableCells
+	cells            *menuTableCells
 	pool, headerPool async.Pool[fyne.CanvasObject]
 	visible, headers map[TableCellID]fyne.CanvasObject
 	hover, marker    *canvas.Rectangle
@@ -1192,16 +1198,16 @@ type staticTableCellsRenderer struct {
 	headColBG, headRowBG, headRowStickyBG, headColStickyBG *canvas.Rectangle
 }
 
-func (r *staticTableCellsRenderer) Layout(fyne.Size) {
+func (r *menuTableCellsRenderer) Layout(fyne.Size) {
 	r.moveIndicators()
 }
 
-func (r *staticTableCellsRenderer) MinSize() fyne.Size {
+func (r *menuTableCellsRenderer) MinSize() fyne.Size {
 	rows, cols := 0, 0
 	if f := r.cells.t.Length; f != nil {
 		rows, cols = r.cells.t.Length()
 	} else {
-		fyne.LogError("Missing Length callback required for StaticTable", nil)
+		fyne.LogError("Missing Length callback required for MenuTable", nil)
 	}
 
 	stickRows := r.cells.t.StickyRowCount
@@ -1241,11 +1247,11 @@ func (r *staticTableCellsRenderer) MinSize() fyne.Size {
 	return fyne.NewSize(width+float32(cols-stickCols-1)*separatorSize, height+float32(rows-stickRows-1)*separatorSize)
 }
 
-func (r *staticTableCellsRenderer) Refresh() {
+func (r *menuTableCellsRenderer) Refresh() {
 	r.refreshForID(r.cells.nextRefreshCellsID)
 }
 
-func (r *staticTableCellsRenderer) refreshForID(toDraw TableCellID) {
+func (r *menuTableCellsRenderer) refreshForID(toDraw TableCellID) {
 	th := r.cells.t.Theme()
 	v := fyne.CurrentApp().Settings().ThemeVariant()
 
@@ -1290,11 +1296,24 @@ func (r *staticTableCellsRenderer) refreshForID(toDraw TableCellID) {
 		c, ok := wasVisible[id]
 		if !ok {
 			c = r.pool.Get()
-			if f := r.cells.t.CreateCell; f != nil && c == nil {
-				c = createItemAndApplyThemeScope(f, r.cells.t)
-			}
-			if c == nil {
-				return
+			if col == 0 {
+				got, ok := c.(*MenuButton)
+				if f := r.cells.t.CreateMenuButton; (f != nil && c == nil) || !ok {
+					c = createItemAndApplyThemeScope(f, r.cells.t)
+				} else {
+					c = got
+				}
+				if c == nil {
+					return
+				}
+			} else {
+				_, ok := c.(*MenuButton)
+				if f := r.cells.t.CreateCell; (f != nil && c == nil) || ok {
+					c = createItemAndApplyThemeScope(f, r.cells.t)
+				}
+				if c == nil {
+					return
+				}
 			}
 		}
 
@@ -1379,17 +1398,24 @@ func (r *staticTableCellsRenderer) refreshForID(toDraw TableCellID) {
 	r.hover.Refresh()
 }
 
-func (r *staticTableCellsRenderer) updateCells(toDraw TableCellID, visible, wasVisible map[TableCellID]fyne.CanvasObject) {
+func (r *menuTableCellsRenderer) updateCells(toDraw TableCellID, visible, wasVisible map[TableCellID]fyne.CanvasObject) {
 	updateCell := r.cells.t.UpdateCell
+	updateMenuButton := r.cells.t.UpdateMenuButton
 	if updateCell == nil {
-		fyne.LogError("Missing UpdateCell callback required for StaticTable", nil)
+		fyne.LogError("Missing UpdateCell callback required for MenuTable", nil)
 		return
 	}
 
 	if toDraw == onlyNewTableCellsID {
 		for id, cell := range visible {
-			if _, ok := wasVisible[id]; !ok {
-				updateCell(id, cell)
+			if id.Col == 0 {
+				if _, ok := wasVisible[id]; !ok {
+					updateMenuButton(id, cell)
+				}
+			} else {
+				if _, ok := wasVisible[id]; !ok {
+					updateCell(id, cell)
+				}
 			}
 		}
 		return
@@ -1399,12 +1425,17 @@ func (r *staticTableCellsRenderer) updateCells(toDraw TableCellID, visible, wasV
 		if toDraw != allTableCellsID && toDraw != id {
 			continue
 		}
-		updateCell(id, cell)
+		if id.Col == 0 {
+			updateMenuButton(id, cell)
+		} else {
+			updateCell(id, cell)
+		}
+
 	}
 
 }
 
-func (r *staticTableCellsRenderer) moveIndicators() {
+func (r *menuTableCellsRenderer) moveIndicators() {
 	rows, cols := 0, 0
 	if f := r.cells.t.Length; f != nil {
 		rows, cols = r.cells.t.Length()
@@ -1518,7 +1549,7 @@ func (r *staticTableCellsRenderer) moveIndicators() {
 	}
 }
 
-func (r *staticTableCellsRenderer) moveMarker(marker fyne.CanvasObject, row, col int, offX, offY float32, minCol, minRow int, widths, heights map[int]float32) {
+func (r *menuTableCellsRenderer) moveMarker(marker fyne.CanvasObject, row, col int, offX, offY float32, minCol, minRow int, widths, heights map[int]float32) {
 	if col == -1 || row == -1 {
 		marker.Hide()
 		marker.Refresh()
@@ -1573,11 +1604,11 @@ func (r *staticTableCellsRenderer) moveMarker(marker fyne.CanvasObject, row, col
 		marker.Hide()
 	} else {
 		left := x1
-		if col >= stickCols { // staticClip X
+		if col >= stickCols { // menuClip X
 			left = fyne.Max(r.cells.t.stuckXOff+r.cells.t.stuckWidth, x1)
 		}
 		top := y1
-		if row >= stickRows { // staticClip Y
+		if row >= stickRows { // menuClip Y
 			top = fyne.Max(r.cells.t.stuckYOff+r.cells.t.stuckHeight, y1)
 		}
 		marker.Move(fyne.NewPos(left, top))
@@ -1588,7 +1619,7 @@ func (r *staticTableCellsRenderer) moveMarker(marker fyne.CanvasObject, row, col
 	marker.Refresh()
 }
 
-func (r *staticTableCellsRenderer) refreshHeaders(visibleRowHeights, visibleColWidths map[int]float32, offX, offY float32,
+func (r *menuTableCellsRenderer) refreshHeaders(visibleRowHeights, visibleColWidths map[int]float32, offX, offY float32,
 	startRow, maxRow, startCol, maxCol int, separatorThickness float32, th fyne.Theme, v fyne.ThemeVariant) []fyne.CanvasObject {
 	wasVisible := r.headers
 	r.headers = make(map[TableCellID]fyne.CanvasObject)
@@ -1706,26 +1737,52 @@ func (r *staticTableCellsRenderer) refreshHeaders(visibleRowHeights, visibleColW
 	return cells
 }
 
-type staticClip struct {
+type menuClip struct {
 	widget.Scroll
 
-	t *StaticTable
+	t *MenuTable
 }
 
-func newStaticClip(t *StaticTable, o fyne.CanvasObject) *staticClip {
-	c := &staticClip{t: t}
+func newMenuClip(t *MenuTable, o fyne.CanvasObject) *menuClip {
+	c := &menuClip{t: t}
 	c.Content = o
 	c.Direction = widget.ScrollNone
 
 	return c
 }
 
-func (c *staticClip) DragEnd() {
+func (c *menuClip) DragEnd() {
 	c.t.DragEnd()
 	c.t.dragCol = noCellMatch
 	c.t.dragRow = noCellMatch
 }
 
-func (c *staticClip) Dragged(e *fyne.DragEvent) {
+func (c *menuClip) Dragged(e *fyne.DragEvent) {
 	c.t.Dragged(e)
+}
+
+type MenuButton struct {
+	Button
+	menu *fyne.Menu
+}
+
+var _ fyne.CanvasObject = (*MenuButton)(nil)
+
+func (b *MenuButton) Tapped(e *fyne.PointEvent) {
+	if fyne.CurrentApp().Driver().CanvasForObject(b) == nil {
+		return
+	}
+	ShowPopUpMenuAtPosition(b.menu, fyne.CurrentApp().Driver().CanvasForObject(b), e.AbsolutePosition)
+}
+
+func (b *MenuButton) SetMenu(menu *fyne.Menu) {
+	b.menu = menu
+}
+
+func NewMenuButton(label string, menu *fyne.Menu) fyne.CanvasObject {
+	b := &MenuButton{menu: menu}
+	b.ExtendBaseWidget(b)
+	b.Text = label
+	b.Button.SetIcon(theme.MenuIcon())
+	return b
 }
