@@ -23,7 +23,7 @@ var _ fyne.Widget = (*List)(nil)
 var _ fyne.Focusable = (*List)(nil)
 
 // List is a widget that pools list items for performance and
-// lays the items out in a vertical direction inside of a scroller.
+// lays the items out in a vertical direction inside of a Scroller.
 // By default, List requires that all items are the same size, but specific
 // rows can have their heights set with SetItemHeight.
 //
@@ -59,7 +59,7 @@ type List struct {
 
 	currentFocus  ListItemID
 	focused       bool
-	scroller      *widget.Scroll
+	Scroller      *widget.Scroll
 	selected      []ListItemID
 	itemMin       fyne.Size
 	itemHeights   map[ListItemID]float32
@@ -108,10 +108,10 @@ func (l *List) CreateRenderer() fyne.WidgetRenderer {
 	}
 
 	layout := &fyne.Container{Layout: newListLayout(l)}
-	l.scroller = widget.NewVScroll(layout)
+	l.Scroller = widget.NewVScroll(layout)
 	layout.Resize(layout.MinSize())
-	objects := []fyne.CanvasObject{l.scroller}
-	return newListRenderer(objects, l, l.scroller, layout)
+	objects := []fyne.CanvasObject{l.Scroller}
+	return newListRenderer(objects, l, l.Scroller, layout)
 }
 
 // FocusGained is called after this List has gained focus.
@@ -140,11 +140,11 @@ func (l *List) MinSize() fyne.Size {
 //
 // Since: 2.4
 func (l *List) RefreshItem(id ListItemID) {
-	if l.scroller == nil {
+	if l.Scroller == nil {
 		return
 	}
 	l.BaseWidget.Refresh()
-	lo := l.scroller.Content.(*fyne.Container).Layout.(*listLayout)
+	lo := l.Scroller.Content.(*fyne.Container).Layout.(*listLayout)
 	item, ok := lo.searchVisible(lo.visible, id)
 	if ok {
 		lo.setupListItem(item, id, l.focused && l.currentFocus == id)
@@ -170,7 +170,7 @@ func (l *List) SetItemHeight(id ListItemID, height float32) {
 }
 
 func (l *List) scrollTo(id ListItemID) {
-	if l.scroller == nil {
+	if l.Scroller == nil {
 		return
 	}
 
@@ -195,23 +195,23 @@ func (l *List) scrollTo(id ListItemID) {
 			lastItemHeight = h
 		}
 	}
-	if y < l.scroller.Offset.Y {
-		l.scroller.Offset.Y = y
-	} else if y+l.itemMin.Height > l.scroller.Offset.Y+l.scroller.Size().Height {
-		l.scroller.Offset.Y = y + lastItemHeight - l.scroller.Size().Height
+	if y < l.Scroller.Offset.Y {
+		l.Scroller.Offset.Y = y
+	} else if y+l.itemMin.Height > l.Scroller.Offset.Y+l.Scroller.Size().Height {
+		l.Scroller.Offset.Y = y + lastItemHeight - l.Scroller.Size().Height
 	}
-	l.offsetUpdated(l.scroller.Offset)
+	l.offsetUpdated(l.Scroller.Offset)
 }
 
 // Resize is called when this list should change size. We refresh to ensure invisible items are drawn.
 func (l *List) Resize(s fyne.Size) {
 	l.BaseWidget.Resize(s)
-	if l.scroller == nil {
+	if l.Scroller == nil {
 		return
 	}
 
-	l.offsetUpdated(l.scroller.Offset)
-	l.scroller.Content.(*fyne.Container).Layout.(*listLayout).updateList(true)
+	l.offsetUpdated(l.Scroller.Offset)
+	l.Scroller.Content.(*fyne.Container).Layout.(*listLayout).updateList(true)
 }
 
 // Select add the item identified by the given ID to the selection.
@@ -259,23 +259,23 @@ func (l *List) ScrollTo(id ListItemID) {
 //
 // Since: 2.1
 func (l *List) ScrollToBottom() {
-	l.scroller.ScrollToBottom()
-	l.offsetUpdated(l.scroller.Offset)
+	l.Scroller.ScrollToBottom()
+	l.offsetUpdated(l.Scroller.Offset)
 }
 
 // ScrollToTop scrolls to the start of the list
 //
 // Since: 2.1
 func (l *List) ScrollToTop() {
-	l.scroller.ScrollToTop()
-	l.offsetUpdated(l.scroller.Offset)
+	l.Scroller.ScrollToTop()
+	l.offsetUpdated(l.Scroller.Offset)
 }
 
 // ScrollToOffset scrolls the list to the given offset position.
 //
 // Since: 2.5
 func (l *List) ScrollToOffset(offset float32) {
-	if l.scroller == nil {
+	if l.Scroller == nil {
 		return
 	}
 	if offset < 0 {
@@ -288,8 +288,8 @@ func (l *List) ScrollToOffset(offset float32) {
 	if offset > contentHeight {
 		offset = contentHeight
 	}
-	l.scroller.ScrollToOffset(fyne.NewPos(0, offset))
-	l.offsetUpdated(l.scroller.Offset)
+	l.Scroller.ScrollToOffset(fyne.NewPos(0, offset))
+	l.offsetUpdated(l.Scroller.Offset)
 }
 
 // GetScrollOffset returns the current scroll offset position
@@ -395,7 +395,7 @@ func (l *listLayout) calculateVisibleRowHeights(itemHeight float32, length int, 
 	isVisible := false
 	l.visibleRowHeights = l.visibleRowHeights[:0]
 
-	if l.list.scroller.Size().Height <= 0 {
+	if l.list.Scroller.Size().Height <= 0 {
 		return
 	}
 
@@ -406,7 +406,7 @@ func (l *listLayout) calculateVisibleRowHeights(itemHeight float32, length int, 
 
 		offY = float32(math.Floor(float64(l.list.offsetY/paddedItemHeight))) * paddedItemHeight
 		minRow = int(math.Floor(float64(offY / paddedItemHeight)))
-		maxRow := int(math.Ceil(float64((offY + l.list.scroller.Size().Height) / paddedItemHeight)))
+		maxRow := int(math.Ceil(float64((offY + l.list.Scroller.Size().Height) / paddedItemHeight)))
 
 		if minRow > length-1 {
 			minRow = length - 1
@@ -439,7 +439,7 @@ func (l *listLayout) calculateVisibleRowHeights(itemHeight float32, length int, 
 			offY = rowOffset
 			isVisible = true
 		}
-		if rowOffset >= l.list.offsetY+l.list.scroller.Size().Height {
+		if rowOffset >= l.list.offsetY+l.list.Scroller.Size().Height {
 			break
 		}
 
@@ -743,7 +743,7 @@ func (l *listLayout) updateList(newOnly bool) {
 
 	l.updateSeparators()
 
-	c := l.list.scroller.Content.(*fyne.Container)
+	c := l.list.Scroller.Content.(*fyne.Container)
 	oldObjLen := len(c.Objects)
 	c.Objects = c.Objects[:0]
 	c.Objects = append(c.Objects, l.children...)

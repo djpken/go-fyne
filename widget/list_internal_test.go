@@ -174,7 +174,7 @@ func TestList_OffsetChange(t *testing.T) {
 
 func TestList_Hover(t *testing.T) {
 	list := createList(1000)
-	children := list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 
 	for i := 0; i < 2; i++ {
 		assert.False(t, children[i].(*listItem).background.Visible())
@@ -190,35 +190,35 @@ func TestList_ScrollTo(t *testing.T) {
 
 	offset := 0
 	assert.Equal(t, offset, int(list.offsetY))
-	assert.Equal(t, offset, int(list.scroller.Offset.Y))
+	assert.Equal(t, offset, int(list.Scroller.Offset.Y))
 
 	list.ScrollTo(20)
 	assert.Equal(t, offset, int(list.offsetY))
-	assert.Equal(t, offset, int(list.scroller.Offset.Y))
+	assert.Equal(t, offset, int(list.Scroller.Offset.Y))
 
 	offset = 6850
 	list.ScrollTo(200)
 	assert.Equal(t, offset, int(list.offsetY))
-	assert.Equal(t, offset, int(list.scroller.Offset.Y))
+	assert.Equal(t, offset, int(list.Scroller.Offset.Y))
 
 	offset = 38074
 	list.ScrollTo(999)
 	assert.Equal(t, offset, int(list.offsetY))
-	assert.Equal(t, offset, int(list.scroller.Offset.Y))
+	assert.Equal(t, offset, int(list.Scroller.Offset.Y))
 
 	offset = 19539
 	list.ScrollTo(500)
 	assert.Equal(t, offset, int(list.offsetY))
-	assert.Equal(t, offset, int(list.scroller.Offset.Y))
+	assert.Equal(t, offset, int(list.Scroller.Offset.Y))
 
 	list.ScrollTo(1000)
 	assert.Equal(t, offset, int(list.offsetY))
-	assert.Equal(t, offset, int(list.scroller.Offset.Y))
+	assert.Equal(t, offset, int(list.Scroller.Offset.Y))
 
 	offset = 39
 	list.ScrollTo(1)
 	assert.Equal(t, offset, int(list.offsetY))
-	assert.Equal(t, offset, int(list.scroller.Offset.Y))
+	assert.Equal(t, offset, int(list.Scroller.Offset.Y))
 }
 
 func TestList_ScrollToBottom(t *testing.T) {
@@ -227,7 +227,7 @@ func TestList_ScrollToBottom(t *testing.T) {
 	offset := 38074
 	list.ScrollToBottom()
 	assert.Equal(t, offset, int(list.offsetY))
-	assert.Equal(t, offset, int(list.scroller.Offset.Y))
+	assert.Equal(t, offset, int(list.Scroller.Offset.Y))
 }
 
 func TestList_ScrollToTop(t *testing.T) {
@@ -236,12 +236,12 @@ func TestList_ScrollToTop(t *testing.T) {
 	tmpOffset := float32(50)
 	list.ScrollToOffset(tmpOffset)
 	assert.Equal(t, tmpOffset, list.offsetY)
-	assert.Equal(t, tmpOffset, list.scroller.Offset.Y)
+	assert.Equal(t, tmpOffset, list.Scroller.Offset.Y)
 
 	offset := float32(0)
 	list.ScrollToTop()
 	assert.Equal(t, offset, list.offsetY)
-	assert.Equal(t, offset, list.scroller.Offset.Y)
+	assert.Equal(t, offset, list.Scroller.Offset.Y)
 }
 
 func TestList_ScrollOffset(t *testing.T) {
@@ -266,7 +266,7 @@ func TestList_ScrollOffset(t *testing.T) {
 
 func TestList_Selection(t *testing.T) {
 	list := createList(1000)
-	children := list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 
 	assert.False(t, children[0].(*listItem).background.Visible())
 	children[0].(*listItem).Tapped(&fyne.PointEvent{})
@@ -285,12 +285,12 @@ func TestList_Selection(t *testing.T) {
 	list.SetItemHeight(2, 220)
 	list.SetItemHeight(3, 220)
 	assert.Equal(t, offset, int(list.offsetY))
-	assert.Equal(t, offset, int(list.scroller.Offset.Y))
+	assert.Equal(t, offset, int(list.Scroller.Offset.Y))
 
 	list.Select(200)
 	offset = 7220
 	assert.Equal(t, offset, int(list.offsetY))
-	assert.Equal(t, offset, int(list.scroller.Offset.Y))
+	assert.Equal(t, offset, int(list.Scroller.Offset.Y))
 }
 
 func TestList_Select(t *testing.T) {
@@ -299,7 +299,7 @@ func TestList_Select(t *testing.T) {
 	assert.Equal(t, float32(0), list.offsetY)
 	list.Select(50)
 	assert.Equal(t, 988, int(list.offsetY))
-	lo := list.scroller.Content.(*fyne.Container).Layout.(*listLayout)
+	lo := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout)
 	visible50, _ := lo.searchVisible(lo.visible, 50)
 	assert.Equal(t, visible50.background.FillColor, theme.Color(theme.ColorNameSelection))
 	assert.True(t, visible50.background.Visible())
@@ -327,12 +327,12 @@ func TestList_Unselect(t *testing.T) {
 	}
 
 	list.Select(10)
-	children := list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	assert.Equal(t, children[10].(*listItem).background.FillColor, theme.Color(theme.ColorNameSelection))
 	assert.True(t, children[10].(*listItem).background.Visible())
 
 	list.Unselect(10)
-	children = list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	children = list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	assert.False(t, children[10].(*listItem).background.Visible())
 	assert.Nil(t, list.selected)
 	assert.Equal(t, 10, unselected)
@@ -352,12 +352,12 @@ func TestList_DataChange(t *testing.T) {
 	test.NewTempApp(t)
 
 	list, w := setupList(t)
-	children := list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 
 	assert.Equal(t, "Test Item 0", children[0].(*listItem).child.(*fyne.Container).Objects[1].(*Label).Text)
 	changeData(list)
 	list.Refresh()
-	children = list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	children = list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	assert.Equal(t, "a", children[0].(*listItem).child.(*fyne.Container).Objects[1].(*Label).Text)
 	test.AssertRendersToMarkup(t, "list/new_data.xml", w.Canvas())
 }
@@ -366,11 +366,11 @@ func TestList_ItemDataChange(t *testing.T) {
 	test.NewTempApp(t)
 
 	list, _ := setupList(t)
-	children := list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	assert.Equal(t, "Test Item 0", children[0].(*listItem).child.(*fyne.Container).Objects[1].(*Label).Text)
 	changeData(list)
 	list.RefreshItem(0)
-	children = list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	children = list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	assert.Equal(t, "a", children[0].(*listItem).child.(*fyne.Container).Objects[1].(*Label).Text)
 }
 
@@ -397,13 +397,13 @@ func TestList_SmallList(t *testing.T) {
 	w := test.NewTempWindow(t, list)
 	w.Resize(fyne.NewSize(200, 400))
 
-	visibleCount := len(list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children)
+	visibleCount := len(list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children)
 	assert.Equal(t, 1, visibleCount)
 
 	data = append(data, "Test Item 1")
 	list.Refresh()
 
-	visibleCount = len(list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children)
+	visibleCount = len(list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children)
 	assert.Equal(t, 2, visibleCount)
 
 	test.AssertRendersToMarkup(t, "list/small.xml", w.Canvas())
@@ -419,7 +419,7 @@ func TestList_ClearList(t *testing.T) {
 	}
 	list.Refresh()
 
-	visibleCount := len(list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children)
+	visibleCount := len(list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children)
 
 	assert.Equal(t, 0, visibleCount)
 	test.AssertRendersToMarkup(t, "list/cleared.xml", w.Canvas())
@@ -447,13 +447,13 @@ func TestList_RemoveItem(t *testing.T) {
 	w := test.NewTempWindow(t, list)
 	w.Resize(fyne.NewSize(200, 400))
 
-	visibleCount := len(list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children)
+	visibleCount := len(list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children)
 	assert.Equal(t, 3, visibleCount)
 
 	data = data[:len(data)-1]
 	list.Refresh()
 
-	visibleCount = len(list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children)
+	visibleCount = len(list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children)
 	assert.Equal(t, 2, visibleCount)
 	test.AssertRendersToMarkup(t, "list/item_removed.xml", w.Canvas())
 }
@@ -480,18 +480,18 @@ func TestList_ScrollThenShrink(t *testing.T) {
 	w := test.NewTempWindow(t, list)
 	w.Resize(fyne.NewSize(300, 300))
 
-	visibles := list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	visibles := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	visibleCount := len(visibles)
 	assert.Equal(t, 9, visibleCount)
 
-	list.scroller.ScrollToBottom()
-	visibles = list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	list.Scroller.ScrollToBottom()
+	visibles = list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	assert.Equal(t, "Data 19", visibles[len(visibles)-1].(*listItem).child.(*Label).Text)
 
 	data = data[:1]
 	assert.NotPanics(t, func() { list.Refresh() })
 
-	visibles = list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	visibles = list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	visibleCount = len(visibles)
 	assert.Equal(t, 1, visibleCount)
 	assert.Equal(t, "Data 0", visibles[0].(*listItem).child.(*Label).Text)
@@ -519,12 +519,12 @@ func TestList_ScrollThenResizeWindow(t *testing.T) {
 	w := test.NewTempWindow(t, list)
 	w.Resize(fyne.NewSize(300, 300))
 
-	list.scroller.ScrollToBottom()
+	list.Scroller.ScrollToBottom()
 
 	// increase window size enough so that all elements are visible
 	w.Resize(fyne.NewSize(300, 1000))
 
-	visibles := list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	visibles := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	visibleCount := len(visibles)
 	assert.Equal(t, 20, visibleCount)
 	assert.Equal(t, "Data 0", visibles[0].(*listItem).child.(*Label).Text)
@@ -551,7 +551,7 @@ func TestList_Focus(t *testing.T) {
 	assert.NotNil(t, canvas.Focused())
 	assert.Equal(t, 0, canvas.Focused().(*List).currentFocus)
 
-	children := list.scroller.Content.(*fyne.Container).Layout.(*listLayout).children
+	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	assert.True(t, children[0].(*listItem).hovered)
 	assert.False(t, children[1].(*listItem).hovered)
 	assert.False(t, children[2].(*listItem).hovered)
@@ -676,7 +676,7 @@ func TestList_ScrollToLargeItem(t *testing.T) {
 
 	w.SetContent(list)
 	list.scrollTo(9)
-	assert.Equal(t, list.scroller.Content.MinSize().Height-list.Size().Height, list.scroller.Offset.Y)
+	assert.Equal(t, list.Scroller.Content.MinSize().Height-list.Size().Height, list.Scroller.Offset.Y)
 }
 
 var minSize fyne.Size
