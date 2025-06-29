@@ -177,11 +177,11 @@ func TestList_Hover(t *testing.T) {
 	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 
 	for i := 0; i < 2; i++ {
-		assert.False(t, children[i].(*listItem).background.Visible())
-		children[i].(*listItem).MouseIn(&desktop.MouseEvent{})
-		assert.Equal(t, children[i].(*listItem).background.FillColor, theme.Color(theme.ColorNameHover))
-		children[i].(*listItem).MouseOut()
-		assert.False(t, children[i].(*listItem).background.Visible())
+		assert.False(t, children[i].(*ListItem).background.Visible())
+		children[i].(*ListItem).MouseIn(&desktop.MouseEvent{})
+		assert.Equal(t, children[i].(*ListItem).background.FillColor, theme.Color(theme.ColorNameHover))
+		children[i].(*ListItem).MouseOut()
+		assert.False(t, children[i].(*ListItem).background.Visible())
 	}
 }
 
@@ -268,18 +268,18 @@ func TestList_Selection(t *testing.T) {
 	list := createList(1000)
 	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 
-	assert.False(t, children[0].(*listItem).background.Visible())
-	children[0].(*listItem).Tapped(&fyne.PointEvent{})
-	assert.Equal(t, children[0].(*listItem).background.FillColor, theme.Color(theme.ColorNameSelection))
-	assert.True(t, children[0].(*listItem).background.Visible())
+	assert.False(t, children[0].(*ListItem).background.Visible())
+	children[0].(*ListItem).Tapped(&fyne.PointEvent{})
+	assert.Equal(t, children[0].(*ListItem).background.FillColor, theme.Color(theme.ColorNameSelection))
+	assert.True(t, children[0].(*ListItem).background.Visible())
 	assert.Len(t, list.selected, 1)
 	assert.Equal(t, 0, list.selected[0])
-	children[1].(*listItem).Tapped(&fyne.PointEvent{})
-	assert.Equal(t, children[1].(*listItem).background.FillColor, theme.Color(theme.ColorNameSelection))
-	assert.True(t, children[1].(*listItem).background.Visible())
+	children[1].(*ListItem).Tapped(&fyne.PointEvent{})
+	assert.Equal(t, children[1].(*ListItem).background.FillColor, theme.Color(theme.ColorNameSelection))
+	assert.True(t, children[1].(*ListItem).background.Visible())
 	assert.Len(t, list.selected, 1)
 	assert.Equal(t, 1, list.selected[0])
-	assert.False(t, children[0].(*listItem).background.Visible())
+	assert.False(t, children[0].(*ListItem).background.Visible())
 
 	offset := 0
 	list.SetItemHeight(2, 220)
@@ -328,12 +328,12 @@ func TestList_Unselect(t *testing.T) {
 
 	list.Select(10)
 	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
-	assert.Equal(t, children[10].(*listItem).background.FillColor, theme.Color(theme.ColorNameSelection))
-	assert.True(t, children[10].(*listItem).background.Visible())
+	assert.Equal(t, children[10].(*ListItem).background.FillColor, theme.Color(theme.ColorNameSelection))
+	assert.True(t, children[10].(*ListItem).background.Visible())
 
 	list.Unselect(10)
 	children = list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
-	assert.False(t, children[10].(*listItem).background.Visible())
+	assert.False(t, children[10].(*ListItem).background.Visible())
 	assert.Nil(t, list.selected)
 	assert.Equal(t, 10, unselected)
 
@@ -354,11 +354,11 @@ func TestList_DataChange(t *testing.T) {
 	list, w := setupList(t)
 	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 
-	assert.Equal(t, "Test Item 0", children[0].(*listItem).child.(*fyne.Container).Objects[1].(*Label).Text)
+	assert.Equal(t, "Test Item 0", children[0].(*ListItem).Child.(*fyne.Container).Objects[1].(*Label).Text)
 	changeData(list)
 	list.Refresh()
 	children = list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
-	assert.Equal(t, "a", children[0].(*listItem).child.(*fyne.Container).Objects[1].(*Label).Text)
+	assert.Equal(t, "a", children[0].(*ListItem).Child.(*fyne.Container).Objects[1].(*Label).Text)
 	test.AssertRendersToMarkup(t, "list/new_data.xml", w.Canvas())
 }
 
@@ -367,11 +367,11 @@ func TestList_ItemDataChange(t *testing.T) {
 
 	list, _ := setupList(t)
 	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
-	assert.Equal(t, "Test Item 0", children[0].(*listItem).child.(*fyne.Container).Objects[1].(*Label).Text)
+	assert.Equal(t, "Test Item 0", children[0].(*ListItem).Child.(*fyne.Container).Objects[1].(*Label).Text)
 	changeData(list)
 	list.RefreshItem(0)
 	children = list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
-	assert.Equal(t, "a", children[0].(*listItem).child.(*fyne.Container).Objects[1].(*Label).Text)
+	assert.Equal(t, "a", children[0].(*ListItem).Child.(*fyne.Container).Objects[1].(*Label).Text)
 }
 
 func TestList_SmallList(t *testing.T) {
@@ -486,7 +486,7 @@ func TestList_ScrollThenShrink(t *testing.T) {
 
 	list.Scroller.ScrollToBottom()
 	visibles = list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
-	assert.Equal(t, "Data 19", visibles[len(visibles)-1].(*listItem).child.(*Label).Text)
+	assert.Equal(t, "Data 19", visibles[len(visibles)-1].(*ListItem).Child.(*Label).Text)
 
 	data = data[:1]
 	assert.NotPanics(t, func() { list.Refresh() })
@@ -494,7 +494,7 @@ func TestList_ScrollThenShrink(t *testing.T) {
 	visibles = list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	visibleCount = len(visibles)
 	assert.Equal(t, 1, visibleCount)
-	assert.Equal(t, "Data 0", visibles[0].(*listItem).child.(*Label).Text)
+	assert.Equal(t, "Data 0", visibles[0].(*ListItem).Child.(*Label).Text)
 }
 
 func TestList_ScrollThenResizeWindow(t *testing.T) {
@@ -527,7 +527,7 @@ func TestList_ScrollThenResizeWindow(t *testing.T) {
 	visibles := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
 	visibleCount := len(visibles)
 	assert.Equal(t, 20, visibleCount)
-	assert.Equal(t, "Data 0", visibles[0].(*listItem).child.(*Label).Text)
+	assert.Equal(t, "Data 0", visibles[0].(*ListItem).Child.(*Label).Text)
 }
 
 func TestList_NoFunctionsSet(t *testing.T) {
@@ -552,22 +552,22 @@ func TestList_Focus(t *testing.T) {
 	assert.Equal(t, 0, canvas.Focused().(*List).currentFocus)
 
 	children := list.Scroller.Content.(*fyne.Container).Layout.(*listLayout).children
-	assert.True(t, children[0].(*listItem).hovered)
-	assert.False(t, children[1].(*listItem).hovered)
-	assert.False(t, children[2].(*listItem).hovered)
+	assert.True(t, children[0].(*ListItem).hovered)
+	assert.False(t, children[1].(*ListItem).hovered)
+	assert.False(t, children[2].(*ListItem).hovered)
 
 	list.TypedKey(&fyne.KeyEvent{Name: fyne.KeyDown})
-	assert.False(t, children[0].(*listItem).hovered)
-	assert.True(t, children[1].(*listItem).hovered)
-	assert.False(t, children[2].(*listItem).hovered)
+	assert.False(t, children[0].(*ListItem).hovered)
+	assert.True(t, children[1].(*ListItem).hovered)
+	assert.False(t, children[2].(*ListItem).hovered)
 
 	list.TypedKey(&fyne.KeyEvent{Name: fyne.KeyUp})
-	assert.True(t, children[0].(*listItem).hovered)
-	assert.False(t, children[1].(*listItem).hovered)
-	assert.False(t, children[2].(*listItem).hovered)
+	assert.True(t, children[0].(*ListItem).hovered)
+	assert.False(t, children[1].(*ListItem).hovered)
+	assert.False(t, children[2].(*ListItem).hovered)
 
 	canvas.Focused().TypedKey(&fyne.KeyEvent{Name: fyne.KeySpace})
-	assert.True(t, children[0].(*listItem).selected)
+	assert.True(t, children[0].(*ListItem).selected)
 }
 
 func createList(items int) *List {

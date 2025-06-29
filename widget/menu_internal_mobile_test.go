@@ -48,10 +48,10 @@ func TestMenu_ItemWithChildTapped(t *testing.T) {
 	assert.False(t, sub2Widget.child.Visible(), "submenu is invisible initially")
 	test.Tap(sub1Widget)
 	assert.True(t, sub1Widget.child.Visible(), "tapping item shows submenu")
-	assert.False(t, sub2Widget.child.Visible(), "other child menu stays hidden")
+	assert.False(t, sub2Widget.child.Visible(), "other Child menu stays hidden")
 	test.Tap(sub2Widget)
 	assert.False(t, sub1Widget.child.Visible(), "tapping other item hides current submenu")
-	assert.True(t, sub2Widget.child.Visible(), "other child menu shows up")
+	assert.True(t, sub2Widget.child.Visible(), "other Child menu shows up")
 
 	sub2subWidget := sub2Widget.child.Items[2].(*menuItem)
 	assert.Equal(t, sub2sub, sub2subWidget.Item)

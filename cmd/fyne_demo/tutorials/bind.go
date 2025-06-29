@@ -47,7 +47,8 @@ func bindingScreen(_ fyne.Window) fyne.CanvasObject {
 		dataList.Append(float64(dataList.Length()+1) / 10)
 	})
 
-	list := widget.NewListWithData(dataList,
+	var list *widget.List
+	list = widget.NewListWithData(dataList,
 		func() fyne.CanvasObject {
 			return container.NewBorder(nil, nil, nil, widget.NewButton("+", nil),
 				widget.NewLabel("item x.y"))
@@ -62,8 +63,10 @@ func bindingScreen(_ fyne.Window) fyne.CanvasObject {
 				val, _ := f.Get()
 				_ = f.Set(val + 1)
 			}
+			listItem := list.Scroller.Content.(*fyne.Container)
+			child := listItem.Objects[0].(*widget.ListItem).Child.(*fyne.Container)
+			fmt.Println(child)
 		})
-
 	formStruct := struct {
 		Name, Email string
 		Subscribe   bool

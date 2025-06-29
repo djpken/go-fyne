@@ -493,22 +493,22 @@ func (l *listRenderer) Refresh() {
 }
 
 // Declare conformity with interfaces.
-var _ fyne.Widget = (*listItem)(nil)
-var _ fyne.Tappable = (*listItem)(nil)
-var _ desktop.Hoverable = (*listItem)(nil)
+var _ fyne.Widget = (*ListItem)(nil)
+var _ fyne.Tappable = (*ListItem)(nil)
+var _ desktop.Hoverable = (*ListItem)(nil)
 
-type listItem struct {
+type ListItem struct {
 	BaseWidget
 
 	onTapped          func()
 	background        *canvas.Rectangle
-	child             fyne.CanvasObject
+	Child             fyne.CanvasObject
 	hovered, selected bool
 }
 
-func newListItem(child fyne.CanvasObject, tapped func()) *listItem {
-	li := &listItem{
-		child:    child,
+func newListItem(child fyne.CanvasObject, tapped func()) *ListItem {
+	li := &ListItem{
+		Child:    child,
 		onTapped: tapped,
 	}
 
@@ -517,7 +517,7 @@ func newListItem(child fyne.CanvasObject, tapped func()) *listItem {
 }
 
 // CreateRenderer is a private method to Fyne which links this widget to its renderer.
-func (li *listItem) CreateRenderer() fyne.WidgetRenderer {
+func (li *ListItem) CreateRenderer() fyne.WidgetRenderer {
 	li.ExtendBaseWidget(li)
 	th := li.Theme()
 	v := fyne.CurrentApp().Settings().ThemeVariant()
@@ -526,35 +526,35 @@ func (li *listItem) CreateRenderer() fyne.WidgetRenderer {
 	li.background.CornerRadius = th.Size(theme.SizeNameSelectionRadius)
 	li.background.Hide()
 
-	objects := []fyne.CanvasObject{li.background, li.child}
+	objects := []fyne.CanvasObject{li.background, li.Child}
 
 	return &listItemRenderer{widget.NewBaseRenderer(objects), li}
 }
 
 // MinSize returns the size that this widget should not shrink below.
-func (li *listItem) MinSize() fyne.Size {
+func (li *ListItem) MinSize() fyne.Size {
 	li.ExtendBaseWidget(li)
 	return li.BaseWidget.MinSize()
 }
 
 // MouseIn is called when a desktop pointer enters the widget.
-func (li *listItem) MouseIn(*desktop.MouseEvent) {
+func (li *ListItem) MouseIn(*desktop.MouseEvent) {
 	li.hovered = true
 	li.Refresh()
 }
 
 // MouseMoved is called when a desktop pointer hovers over the widget.
-func (li *listItem) MouseMoved(*desktop.MouseEvent) {
+func (li *ListItem) MouseMoved(*desktop.MouseEvent) {
 }
 
 // MouseOut is called when a desktop pointer exits the widget.
-func (li *listItem) MouseOut() {
+func (li *ListItem) MouseOut() {
 	li.hovered = false
 	li.Refresh()
 }
 
 // Tapped is called when a pointer tapped event is captured and triggers any tap handler.
-func (li *listItem) Tapped(*fyne.PointEvent) {
+func (li *ListItem) Tapped(*fyne.PointEvent) {
 	if li.onTapped != nil {
 		li.selected = true
 		li.Refresh()
@@ -568,19 +568,19 @@ var _ fyne.WidgetRenderer = (*listItemRenderer)(nil)
 type listItemRenderer struct {
 	widget.BaseRenderer
 
-	item *listItem
+	item *ListItem
 }
 
-// MinSize calculates the minimum size of a listItem.
-// This is based on the size of the status indicator and the size of the child object.
+// MinSize calculates the minimum size of a ListItem.
+// This is based on the size of the status indicator and the size of the Child object.
 func (li *listItemRenderer) MinSize() fyne.Size {
-	return li.item.child.MinSize()
+	return li.item.Child.MinSize()
 }
 
-// Layout the components of the listItem widget.
+// Layout the components of the ListItem widget.
 func (li *listItemRenderer) Layout(size fyne.Size) {
 	li.item.background.Resize(size)
-	li.item.child.Resize(size)
+	li.item.Child.Resize(size)
 }
 
 func (li *listItemRenderer) Refresh() {
@@ -605,7 +605,7 @@ func (li *listItemRenderer) Refresh() {
 var _ fyne.Layout = (*listLayout)(nil)
 
 type listItemAndID struct {
-	item *listItem
+	item *ListItem
 	id   ListItemID
 }
 
@@ -634,7 +634,7 @@ func (l *listLayout) MinSize([]fyne.CanvasObject) fyne.Size {
 	return l.list.contentMinSize()
 }
 
-func (l *listLayout) getItem() *listItem {
+func (l *listLayout) getItem() *ListItem {
 	item := l.itemPool.Get()
 	if item == nil {
 		if f := l.list.CreateItem; f != nil {
@@ -643,7 +643,7 @@ func (l *listLayout) getItem() *listItem {
 			item = newListItem(item2, nil)
 		}
 	}
-	return item.(*listItem)
+	return item.(*ListItem)
 }
 
 func (l *listLayout) offsetUpdated(pos fyne.Position) {
@@ -654,7 +654,7 @@ func (l *listLayout) offsetUpdated(pos fyne.Position) {
 	l.updateList(true)
 }
 
-func (l *listLayout) setupListItem(li *listItem, id ListItemID, focus bool) {
+func (l *listLayout) setupListItem(li *ListItem, id ListItemID, focus bool) {
 	previousIndicator := li.selected
 	li.selected = false
 	for _, s := range l.list.selected {
@@ -671,7 +671,7 @@ func (l *listLayout) setupListItem(li *listItem, id ListItemID, focus bool) {
 		li.Refresh()
 	}
 	if f := l.list.UpdateItem; f != nil {
-		f(id, li.child)
+		f(id, li.Child)
 	}
 	li.onTapped = func() {
 		if !fyne.CurrentDevice().IsMobile() {
@@ -811,7 +811,7 @@ func (l *listLayout) updateSeparators() {
 }
 
 // invariant: visible is in ascending order of IDs
-func (l *listLayout) searchVisible(visible []listItemAndID, id ListItemID) (*listItem, bool) {
+func (l *listLayout) searchVisible(visible []listItemAndID, id ListItemID) (*ListItem, bool) {
 	ln := len(visible)
 	idx := sort.Search(ln, func(i int) bool { return visible[i].id >= id })
 	if idx < ln && visible[idx].id == id {
